@@ -1,0 +1,10 @@
+{{/* Lista de autores enlazados. Recibe una lista de slugs. */}}
+{{ $out := slice }}
+{{ range . }}
+  {{ with site.GetPage (printf "/autores/%s" .) }}
+    {{ $out = $out | append (printf "<a href=\"%s\">%s</a>" .RelPermalink .Title) }}
+  {{ else }}
+    {{ $out = $out | append (humanize .) }}
+  {{ end }}
+{{ end }}
+{{ delimit $out ", " " y " | safeHTML }}

@@ -1,0 +1,22 @@
+{{ define "main" }}
+<section class="contenedor seccion hoja-qr">
+  <div class="hoja-qr__cab no-imprimir">
+    <h1>{{ .Title }}</h1>
+    {{ .Content }}
+    <button class="btn btn--amarillo" type="button" onclick="window.print()">Imprimir hoja de QR</button>
+  </div>
+  <div class="qr-grilla">
+    {{ range where site.RegularPages "Section" "in" (slice "posters" "ponencias") }}
+    {{ $qr := images.QR .Permalink (dict "targetDir" "qr" "scale" 8) }}
+    <div class="qr-tarjeta">
+      <div class="patron patron--chico" aria-hidden="true"></div>
+      <img src="{{ $qr.RelPermalink }}" alt="QR de {{ .Title }}">
+      <p class="qr-tarjeta__titulo">{{ .Title }}</p>
+      <p class="qr-tarjeta__autores">{{ $n := slice }}{{ range .Params.autores }}{{ with site.GetPage (printf "/autores/%s" .) }}{{ $n = $n | append .Title }}{{ end }}{{ end }}{{ delimit $n ", " }}</p>
+      <p class="qr-tarjeta__url">{{ strings.TrimPrefix "https://" .Permalink }}</p>
+      <p class="qr-tarjeta__pie">Escaneá para ver el poster y el video pitch</p>
+    </div>
+    {{ end }}
+  </div>
+</section>
+{{ end }}

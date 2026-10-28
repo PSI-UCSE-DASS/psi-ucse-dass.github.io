@@ -1,0 +1,16 @@
+<footer class="pie">
+  <div class="patron" aria-hidden="true"></div>
+  <div class="contenedor pie__in">
+    <div>
+      <p class="pie__titulo">Prosecretaría de Investigación</p>
+      <p>{{ site.Params.institucion }}</p>
+      <p><em>{{ site.Params.lema }}</em></p>
+    </div>
+    <div>
+      <p>Contacto: <a href="mailto:{{ site.Params.contacto }}">{{ site.Params.contacto }}</a></p>
+      <p>Los trabajos se publican con autorización de sus autores bajo licencia
+        <a href="{{ site.Params.licenciaURL }}" rel="license noopener">{{ site.Params.licencia }}</a>, salvo indicación en contrario.</p>
+      <p>© {{ now.Year }} PSI-UCSE</p>
+    </div>
+  </div>
+</footer>

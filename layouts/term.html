@@ -1,0 +1,27 @@
+{{ define "main" }}
+<section class="cabecera" {{ with .Params.color }}style="--acento-gabinete: {{ . | safeCSS }}"{{ end }}>
+  <div class="contenedor">
+    <p class="sobretitulo">{{ .Data.Singular | humanize }}</p>
+    <h1>{{ .Title }}</h1>
+    {{ with .Params.fechas }}<p class="cabecera__meta">{{ . }}{{ with $.Params.lugar }} · {{ . }}{{ end }}</p>{{ end }}
+    {{ with .Content }}<div class="cabecera__txt">{{ . }}</div>{{ end }}
+    {{ with .Params.lineas }}
+      <p class="cabecera__meta"><strong>Líneas de investigación:</strong> {{ delimit . ", " }}</p>
+    {{ end }}
+    {{ with .Params.coordinadores }}<p class="cabecera__meta"><strong>Coordinación:</strong> {{ partial "autores-links.html" . }}</p>{{ end }}
+  </div>
+</section>
+<section class="contenedor seccion">
+  {{ $posters := where .Pages "Section" "posters" }}
+  {{ $ponencias := where .Pages "Section" "ponencias" }}
+  {{ with $posters }}
+  <h2 class="h2">Posters</h2>
+  <div class="grilla">{{ range .ByDate.Reverse }}{{ partial "tarjeta.html" . }}{{ end }}</div>
+  {{ end }}
+  {{ with $ponencias }}
+  <h2 class="h2">Ponencias</h2>
+  <div class="grilla">{{ range .ByDate.Reverse }}{{ partial "tarjeta.html" . }}{{ end }}</div>
+  {{ end }}
+  {{ if not (or $posters $ponencias) }}<p class="vacio">Todavía no hay trabajos publicados.</p>{{ end }}
+</section>
+{{ end }}

@@ -1,0 +1,17 @@
+{{ define "main" }}
+<section class="cabecera">
+  <div class="contenedor">
+    <h1>{{ .Title }}</h1>
+    {{ with .Content }}<div class="cabecera__txt">{{ . }}</div>{{ end }}
+  </div>
+</section>
+<section class="contenedor seccion">
+  {{ if .Pages }}
+  <div class="grilla">
+    {{ range .Pages.ByDate.Reverse }}{{ partial "tarjeta.html" . }}{{ end }}
+  </div>
+  {{ else }}
+  <p class="vacio">Todavía no hay trabajos publicados en esta sección.</p>
+  {{ end }}
+</section>
+{{ end }}

@@ -1,0 +1,19 @@
+{{ define "main" }}
+<section class="cabecera"><div class="contenedor"><h1>{{ .Title }}</h1><div class="cabecera__txt">{{ .Content }}</div></div></section>
+<section class="contenedor seccion">
+  <link href="{{ "pagefind/pagefind-ui.css" | relURL }}" rel="stylesheet">
+  <div id="buscador"></div>
+  <script src="{{ "pagefind/pagefind-ui.js" | relURL }}"></script>
+  <script>
+    window.addEventListener('DOMContentLoaded', function () {
+      var ui = new PagefindUI({
+        element: '#buscador', showSubResults: false, showImages: true, resetStyles: false,
+        translations: { placeholder: 'Buscar por título, autor o palabra clave', zero_results: 'No hay resultados para [SEARCH_TERM]', filters_label: 'Filtros', clear_search: 'Borrar', load_more: 'Ver más resultados' }
+      });
+      var q = new URLSearchParams(location.search).get('q');
+      if (q) ui.triggerSearch(q);
+    });
+  </script>
+  <noscript><p>La búsqueda necesita JavaScript. Podés navegar por <a href="{{ "posters/" | relURL }}">posters</a> o <a href="{{ "autores/" | relURL }}">autores</a>.</p></noscript>
+</section>
+{{ end }}

@@ -1,0 +1,12 @@
+{{ define "main" }}
+<section class="cabecera"><div class="contenedor"><h1>{{ .Title }}</h1>{{ with .Content }}<div class="cabecera__txt">{{ . }}</div>{{ end }}</div></section>
+<section class="contenedor seccion">
+  <ul class="lista-autores">
+    {{ range .Pages.ByTitle }}
+    {{ $slug := .File.ContentBaseName }}
+    {{ $n := 0 }}{{ range site.RegularPages }}{{ if in .Params.autores $slug }}{{ $n = add $n 1 }}{{ end }}{{ end }}
+    <li><a href="{{ .RelPermalink }}"><span class="autor__inicial autor__inicial--chica" aria-hidden="true">{{ substr .Title 0 1 }}</span><span><strong>{{ .Title }}</strong><small>{{ .Params.rol | humanize }} · {{ $n }} {{ cond (eq $n 1) "trabajo" "trabajos" }}</small></span></a></li>
+    {{ end }}
+  </ul>
+</section>
+{{ end }}

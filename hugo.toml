@@ -1,0 +1,72 @@
+baseURL = "https://psi-ucse-dass.github.io/psi-ucse-dass/"
+languageCode = "es-ar"
+defaultContentLanguage = "es"
+title = "Repositorio de Investigación · PSI-UCSE"
+enableRobotsTXT = true
+buildFuture = true
+titleCaseStyle = "firstupper"
+removePathAccents = true
+
+[params]
+  descripcion = "Posters, ponencias y proyectos de investigación de la Prosecretaría de Investigación de la Universidad Católica de Santiago del Estero, sede San Salvador de Jujuy."
+  institucion = "Universidad Católica de Santiago del Estero · Sede San Salvador de Jujuy"
+  lema = "Scientia Deo et Patriae Servire"
+  contacto = "investigacion@ucse.edu.ar"
+  sitioUCSE = "https://www.ucse.edu.ar/"
+  licencia = "CC BY-NC 4.0"
+  licenciaURL = "https://creativecommons.org/licenses/by-nc/4.0/deed.es"
+
+[taxonomies]
+  gabinete = "gabinetes"
+  evento = "eventos"
+  palabra = "palabras-clave"
+  tipo = "tipos"
+
+[permalinks]
+  [permalinks.page]
+    posters = "/posters/:year/:slug/"
+    ponencias = "/ponencias/:year/:slug/"
+
+[menus]
+  [[menus.main]]
+    name = "Posters"
+    pageRef = "/posters"
+    weight = 10
+  [[menus.main]]
+    name = "Ponencias"
+    pageRef = "/ponencias"
+    weight = 20
+  [[menus.main]]
+    name = "Autores"
+    pageRef = "/autores"
+    weight = 30
+  [[menus.main]]
+    name = "Gabinetes"
+    pageRef = "/gabinetes"
+    weight = 40
+  [[menus.main]]
+    name = "Eventos"
+    pageRef = "/eventos"
+    weight = 50
+  [[menus.main]]
+    name = "Buscar"
+    pageRef = "/buscar"
+    weight = 60
+
+[markup.goldmark.renderer]
+  unsafe = false
+
+[imaging]
+  quality = 82
+  resampleFilter = "Lanczos"
+
+[related]
+  includeNewer = true
+  threshold = 50
+  toLower = true
+  [[related.indices]]
+    name = "palabras-clave"
+    weight = 100
+  [[related.indices]]
+    name = "gabinetes"
+    weight = 20

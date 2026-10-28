@@ -1,0 +1,12 @@
+{{/* Devuelve la imagen del poster (o su miniatura) redimensionada, o nada. Recibe dict page, ancho. */}}
+{{- $p := .page -}}
+{{- $res := "" -}}
+{{- $img := "" -}}
+{{- with $p.Params.miniatura }}{{ $img = $p.Resources.GetMatch . }}{{ end -}}
+{{- if and (not $img) (eq ($p.Params.poster_tipo | default "imagen") "imagen") -}}
+  {{- with $p.Params.poster }}{{ $img = $p.Resources.GetMatch . }}{{ end -}}
+{{- end -}}
+{{- if and $img (in (slice "image/png" "image/jpeg" "image/webp") $img.MediaType.Type) -}}
+  {{- $res = $img.Resize (printf "%dx webp" .ancho) -}}
+{{- end -}}
+{{- return $res -}}

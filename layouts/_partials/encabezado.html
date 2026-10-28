@@ -1,0 +1,32 @@
+<div class="barra-superior">
+  <div class="contenedor barra-superior__in">
+    <span class="barra-superior__txt">Prosecretaría de Investigación</span>
+    <div class="barra-superior__acciones">
+      <a class="btn-mini btn-mini--amarillo" href="{{ "buscar/" | relURL }}">Buscar</a>
+      <a class="btn-mini" href="{{ site.Params.sitioUCSE }}" rel="noopener">Sitio UCSE</a>
+    </div>
+  </div>
+</div>
+<header class="encabezado">
+  <div class="contenedor encabezado__in">
+    <a class="marca" href="{{ "/" | relURL }}" aria-label="Inicio del repositorio PSI-UCSE">
+      {{ partial "logo.html" . }}
+      <span class="marca__txt"><strong>Repositorio de Investigación</strong><small>PSI · UCSE Jujuy</small></span>
+    </a>
+    <button class="menu-btn" aria-expanded="false" aria-controls="menu" aria-label="Abrir menú">
+      <span></span><span></span><span></span>
+    </button>
+    <nav id="menu" class="menu" aria-label="Principal">
+      <ul>
+        {{ $actual := . }}
+        {{ range site.Menus.main }}
+        <li><a href="{{ .URL }}" {{ if or ($actual.IsMenuCurrent "main" .) ($actual.HasMenuCurrent "main" .) }}aria-current="page"{{ end }}>{{ .Name }}</a></li>
+        {{ end }}
+      </ul>
+      <button class="tema-btn" type="button" aria-label="Cambiar entre modo claro y oscuro">
+        <svg class="ico-sol" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 1.5v3M12 19.5v3M1.5 12h3M19.5 12h3M4.6 4.6l2.1 2.1M17.3 17.3l2.1 2.1M4.6 19.4l2.1-2.1M17.3 6.7l2.1-2.1"/></svg>
+        <svg class="ico-luna" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 14.5A8.5 8.5 0 0 1 9.5 3.5a8.5 8.5 0 1 0 11 11z"/></svg>
+      </button>
+    </nav>
+  </div>
+</header>

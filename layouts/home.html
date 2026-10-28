@@ -1,0 +1,48 @@
+{{ define "main" }}
+<section class="hero">
+  <div class="contenedor hero__in">
+    <p class="hero__pre">Prosecretaría de Investigación · UCSE Jujuy</p>
+    <h1 class="hero__titulo">Repositorio de investigación</h1>
+    <p class="hero__sub">Posters digitales, ponencias y proyectos de docentes y estudiantes.</p>
+    <form class="hero__buscar" action="{{ "buscar/" | relURL }}" role="search">
+      <label class="sr" for="q">Buscar trabajos</label>
+      <input id="q" name="q" type="search" placeholder="Buscar por título, autor o palabra clave">
+      <button type="submit">Buscar</button>
+    </form>
+  </div>
+</section>
+
+{{ $posters := where site.RegularPages "Section" "posters" }}
+{{ $ponencias := where site.RegularPages "Section" "ponencias" }}
+<section class="contenedor seccion">
+  <div class="cifras">
+    <div><strong>{{ len $posters }}</strong><span>posters</span></div>
+    <div><strong>{{ len $ponencias }}</strong><span>ponencias</span></div>
+    <div><strong>{{ len (where site.RegularPages "Section" "autores") }}</strong><span>autores</span></div>
+    <div><strong>{{ len (site.Taxonomies.gabinetes) }}</strong><span>gabinetes</span></div>
+  </div>
+</section>
+
+{{ with site.GetPage "/eventos/simposio-de-investigacion-2026" }}
+<section class="contenedor seccion">
+  <div class="destacado-evento">
+    <div>
+      <p class="sobretitulo">Evento en curso</p>
+      <h2>{{ .Title }}</h2>
+      <p>{{ .Params.fechas }}{{ with .Params.lugar }} · {{ . }}{{ end }}</p>
+    </div>
+    <a class="btn btn--amarillo" href="{{ .RelPermalink }}">Ver trabajos del evento</a>
+  </div>
+</section>
+{{ end }}
+
+<section class="contenedor seccion">
+  <div class="seccion__cab">
+    <h2 class="h2">Posters</h2>
+    <a href="{{ "posters/" | relURL }}">Ver todos →</a>
+  </div>
+  <div class="grilla">
+    {{ range first 9 $posters.ByDate.Reverse }}{{ partial "tarjeta.html" . }}{{ end }}
+  </div>
+</section>
+{{ end }}

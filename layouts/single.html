@@ -1,0 +1,120 @@
+{{ define "main" }}
+{{ $tipo := .Params.poster_tipo | default "imagen" }}
+{{ $archivo := false }}{{ with .Params.poster }}{{ $archivo = $.Resources.GetMatch . }}{{ end }}
+<article class="contenedor trabajo" data-pagefind-body>
+  <nav class="migas" aria-label="Ruta" data-pagefind-ignore>
+    <a href="{{ "/" | relURL }}">Inicio</a> / <a href="{{ .CurrentSection.RelPermalink }}">{{ .CurrentSection.Title }}</a>
+  </nav>
+  <header class="trabajo__cab">
+    <div data-pagefind-ignore>
+    {{ range .GetTerms "gabinetes" }}<a class="etiqueta" href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>{{ end }}
+    </div>
+    <h1 data-pagefind-meta="title">{{ .Title }}</h1>
+    <p class="trabajo__autores">{{ partial "autores-links.html" .Params.autores }}</p>
+    {{ with .Params.directores }}<p class="trabajo__dir">Dirección: {{ partial "autores-links.html" . }}</p>{{ end }}
+  </header>
+
+  <span hidden data-pagefind-filter="Tipo">{{ if eq .Section "posters" }}Poster{{ else }}Ponencia{{ end }}</span>
+  <span hidden data-pagefind-filter="Año">{{ .Date.Year }}</span>
+  {{ range .GetTerms "gabinetes" }}<span hidden data-pagefind-filter="Gabinete">{{ .LinkTitle }}</span>{{ end }}
+  {{ range .GetTerms "eventos" }}<span hidden data-pagefind-filter="Evento">{{ .LinkTitle }}</span>{{ end }}
+  {{ with partial "miniatura.html" (dict "page" . "ancho" 480) }}<span hidden data-pagefind-meta="image:{{ .RelPermalink }}"></span>{{ end }}
+
+  <div class="trabajo__grid">
+    <div class="trabajo__visor">
+      {{ if and $archivo (eq $tipo "imagen") }}
+        {{ $med := $archivo.Resize "1600x webp" }}
+        <figure class="visor">
+          <a class="visor__link" href="{{ $archivo.RelPermalink }}" data-zoom aria-label="Ver poster en pantalla completa">
+            <img src="{{ $med.RelPermalink }}" width="{{ $med.Width }}" height="{{ $med.Height }}" alt="{{ .Params.poster_alt | default (printf "Poster: %s" .Title) }}">
+          </a>
+          <figcaption>Tocá el poster para verlo en pantalla completa y ampliarlo.</figcaption>
+        </figure>
+      {{ else if and $archivo (eq $tipo "pdf") }}
+        <object class="visor__pdf" data="{{ $archivo.RelPermalink }}" type="application/pdf" aria-label="{{ .Params.poster_alt }}">
+          <p><a class="btn" href="{{ $archivo.RelPermalink }}">Abrir el poster en PDF</a></p>
+        </object>
+      {{ else if eq $tipo "html" }}
+        {{ $src := .Params.poster_url | default (printf "%s%s" .RelPermalink .Params.poster) }}
+        <div class="visor__html">
+          <iframe src="{{ $src }}" title="Poster interactivo: {{ .Title }}" sandbox="allow-scripts allow-popups" loading="lazy"></iframe>
+        </div>
+        <p><a class="btn btn--sec" href="{{ $src }}" target="_blank" rel="noopener">Abrir el poster interactivo en otra pestaña</a></p>
+      {{ end }}
+      {{ range .Params.fotos }}
+        {{ with $.Resources.GetMatch .archivo }}{{ $f := .Resize "1200x webp" }}
+        <figure class="foto"><img src="{{ $f.RelPermalink }}" width="{{ $f.Width }}" height="{{ $f.Height }}" alt="{{ $.Params.alt }}" loading="lazy"></figure>
+        {{ end }}
+      {{ end }}
+
+      {{ with .Params.video }}
+        {{ $id := "" }}
+        {{ with findRESubmatch `(?:youtu\.be/|v=|embed/|shorts/)([A-Za-z0-9_-]{11})` . 1 }}{{ $id = index (index . 0) 1 }}{{ end }}
+        <section class="pitch" data-pagefind-ignore>
+          <h2 class="h2">Video pitch</h2>
+          {{ if $id }}
+          <button class="video-facade" data-yt="{{ $id }}" aria-label="Reproducir el video pitch">
+            <img src="https://i.ytimg.com/vi/{{ $id }}/hqdefault.jpg" alt="" loading="lazy">
+            <span class="video-facade__play" aria-hidden="true">▶</span>
+          </button>
+          {{ else }}
+          <p><a class="btn" href="{{ . }}" rel="noopener">Ver el video pitch</a></p>
+          {{ end }}
+        </section>
+      {{ end }}
+      {{ with .Params.video_archivo }}{{ with $.Resources.GetMatch . }}
+        <section class="pitch" data-pagefind-ignore>
+          <h2 class="h2">Video pitch</h2>
+          <video controls preload="none" src="{{ .RelPermalink }}" {{ with $.Params.video_poster }}poster="{{ . }}"{{ end }}></video>
+        </section>
+      {{ end }}{{ end }}
+    </div>
+
+    <aside class="ficha" data-pagefind-ignore>
+      <dl>
+        {{ with .GetTerms "eventos" }}<dt>Evento</dt><dd>{{ range . }}<a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>{{ end }}</dd>{{ end }}
+        {{ with $.Params.mesa }}<dt>Mesa</dt><dd>{{ . }}</dd>{{ end }}
+        <dt>Fecha</dt><dd>{{ .Date | time.Format ":date_long" }}</dd>
+        {{ with .Params.linea }}<dt>Línea de investigación</dt><dd>{{ . }}</dd>{{ end }}
+        {{ with .GetTerms "palabras-clave" }}<dt>Palabras clave</dt><dd class="chips">{{ range . }}<a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>{{ end }}</dd>{{ end }}
+        <dt>Licencia</dt><dd>{{ $lic := .Params.licencia | default site.Params.licencia }}{{ if eq $lic site.Params.licencia }}<a href="{{ site.Params.licenciaURL }}" rel="license noopener">{{ $lic }}</a>{{ else }}{{ $lic }}{{ end }}</dd>
+      </dl>
+      <div class="ficha__acciones">
+        {{ with $archivo }}<a class="btn btn--amarillo" href="{{ .RelPermalink }}" download>Descargar poster</a>{{ end }}
+        {{ with .Params.repo }}<a class="btn btn--sec" href="{{ . }}" rel="noopener">Código</a>{{ end }}
+        {{ with .Params.demo }}<a class="btn btn--sec" href="{{ . }}" rel="noopener">Prototipo</a>{{ end }}
+        <button class="btn btn--sec" type="button" data-compartir="{{ .Permalink }}">Compartir</button>
+      </div>
+      <div class="qr">
+        {{ $qr := images.QR .Permalink (dict "targetDir" "qr" "scale" 6) }}
+        <img src="{{ $qr.RelPermalink }}" width="{{ $qr.Width }}" height="{{ $qr.Height }}" alt="Código QR de este trabajo">
+        <a href="{{ $qr.RelPermalink }}" download="qr-{{ .File.ContentBaseName }}.png">Descargar QR</a>
+      </div>
+      <details class="cita">
+        <summary>Cómo citar</summary>
+        {{ $nombres := slice }}{{ range .Params.autores }}{{ with site.GetPage (printf "/autores/%s" .) }}{{ $nombres = $nombres | append .Title }}{{ end }}{{ end }}
+        <p id="cita-txt">{{ delimit $nombres ", " " y " }} ({{ .Date.Year }}). <em>{{ .Title }}</em> [{{ if eq .Section "posters" }}Poster{{ else }}Ponencia{{ end }}]. {{ range .GetTerms "eventos" }}{{ .LinkTitle }}, {{ end }}Universidad Católica de Santiago del Estero, San Salvador de Jujuy. {{ .Permalink }}</p>
+        <button class="btn btn--sec" type="button" data-copiar="#cita-txt">Copiar cita</button>
+      </details>
+    </aside>
+  </div>
+
+  <section class="resumen">
+    <h2 class="h2">Resumen</h2>
+    {{ with .Params.resumen }}<p>{{ . }}</p>{{ end }}
+    {{ .Content }}
+  </section>
+
+  {{ $rel := site.RegularPages.Related . | complement (slice .) | first 3 }}
+  {{ with $rel }}
+  <section class="relacionados" data-pagefind-ignore>
+    <h2 class="h2">Trabajos relacionados</h2>
+    <div class="grilla">{{ range . }}{{ partial "tarjeta.html" . }}{{ end }}</div>
+  </section>
+  {{ end }}
+</article>
+<dialog class="zoom" aria-label="Poster en pantalla completa">
+  <button class="zoom__cerrar" type="button" aria-label="Cerrar">✕</button>
+  <div class="zoom__lienzo"><img alt=""></div>
+</dialog>
+{{ end }}

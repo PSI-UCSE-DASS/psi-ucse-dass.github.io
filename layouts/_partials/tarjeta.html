@@ -1,0 +1,16 @@
+<article class="tarjeta">
+  <a class="tarjeta__img" href="{{ .RelPermalink }}" tabindex="-1" aria-hidden="true">
+    {{ with partial "miniatura.html" (dict "page" . "ancho" 640) }}
+      <img src="{{ .RelPermalink }}" width="{{ .Width }}" height="{{ .Height }}" alt="" loading="lazy">
+    {{ else }}
+      <span class="tarjeta__ph">{{ upper (.Params.poster_tipo | default "poster") }}</span>
+    {{ end }}
+    {{ with .Params.video }}<span class="chip-video">▶ Pitch</span>{{ end }}
+  </a>
+  <div class="tarjeta__cuerpo">
+    {{ range .GetTerms "gabinetes" }}<a class="etiqueta" href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>{{ end }}
+    <h3 class="tarjeta__titulo"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+    <p class="tarjeta__autores">{{ partial "autores-links.html" .Params.autores }}</p>
+    <p class="tarjeta__meta">{{ .Date.Year }}{{ range .GetTerms "eventos" }} · {{ .LinkTitle }}{{ end }}</p>
+  </div>
+</article>
