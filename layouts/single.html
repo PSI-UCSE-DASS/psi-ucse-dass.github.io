@@ -47,6 +47,7 @@
       {{ with .Params.poster_html }}
         <details class="interactivo">
           <summary>Ver la versión interactiva del poster</summary>
+          <p class="interactivo__acciones"><button class="btn btn--sec" type="button" data-ampliar-html="{{ . | relURL }}">Ampliar a pantalla completa</button></p>
           <div class="visor__html visor__html--ancho">
             <iframe src="{{ . | relURL }}" title="Versión interactiva: {{ $.Title }}" sandbox="allow-scripts" loading="lazy"></iframe>
           </div>
@@ -121,6 +122,13 @@
   </section>
   {{ end }}
 </article>
+{{ with .Params.poster_html }}
+<dialog class="zoom zoom--html" aria-label="Versión interactiva en pantalla completa">
+  <button class="zoom__cerrar" type="button" aria-label="Cerrar">✕</button>
+  <iframe title="Versión interactiva ampliada: {{ $.Title }}" sandbox="allow-scripts"></iframe>
+  <p class="zoom__nota">Girá el celular para ver el poster más grande.</p>
+</dialog>
+{{ end }}
 <dialog class="zoom" aria-label="Poster en pantalla completa">
   <button class="zoom__cerrar" type="button" aria-label="Cerrar">✕</button>
   <div class="zoom__lienzo"><img alt=""></div>

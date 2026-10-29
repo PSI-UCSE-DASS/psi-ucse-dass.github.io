@@ -265,3 +265,9 @@ dialog.zoom::backdrop { background: rgba(5, 15, 35, .9); }
 .bloque .h2 { margin-bottom: 4px; }
 .responsable { margin: 0 0 20px; color: var(--texto-suave); font-size: .92rem; }
 .chip-video--solo { position: static; display: inline-block; margin: 12px 0 0 16px; }
+
+.interactivo__acciones { margin: 12px 0 0; }
+dialog.zoom--html { height: 100vh; height: 100dvh; overflow: hidden; }
+dialog.zoom--html iframe { width: 100%; height: 100%; border: 0; background: #fff; display: block; }
+.zoom__nota { display: none; position: fixed; left: 0; right: 0; bottom: 16px; margin: 0; text-align: center; color: #fff; font-size: .9rem; pointer-events: none; }
+@media (max-width: 700px) and (orientation: portrait) { .zoom__nota { display: block; } }

@@ -32,7 +32,7 @@
   });
 
   // Zoom del poster en pantalla completa
-  var dlg = document.querySelector('dialog.zoom');
+  var dlg = document.querySelector('dialog.zoom:not(.zoom--html)');
   var link = document.querySelector('[data-zoom]');
   if (dlg && link && dlg.showModal) {
     var img = dlg.querySelector('img');
@@ -47,6 +47,16 @@
     img.addEventListener('click', function () { lienzo.classList.toggle('ampliado'); });
     dlg.querySelector('.zoom__cerrar').addEventListener('click', function () { dlg.close(); });
     dlg.addEventListener('click', function (e) { if (e.target === dlg) dlg.close(); });
+  }
+
+  // Versión interactiva en pantalla completa
+  var dh = document.querySelector('dialog.zoom--html');
+  var bh = document.querySelector('[data-ampliar-html]');
+  if (dh && bh && dh.showModal) {
+    var fr = dh.querySelector('iframe');
+    bh.addEventListener('click', function () { fr.src = bh.dataset.ampliarHtml; dh.showModal(); });
+    dh.querySelector('.zoom__cerrar').addEventListener('click', function () { dh.close(); });
+    dh.addEventListener('close', function () { fr.removeAttribute('src'); });
   }
 
   // Compartir y copiar
