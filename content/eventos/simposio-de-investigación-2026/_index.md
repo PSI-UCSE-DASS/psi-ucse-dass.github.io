@@ -1,5 +1,6 @@
 ---
 title: "VIII Simposio de Investigación 2026"
+fecha_texto: "Jujuy, 29 y 30 de octubre de 2026"
 ---
 “InnovAcción Global: Universidad, Economía del Conocimiento y Transformación Digital en Sectores Estratégicos”
 

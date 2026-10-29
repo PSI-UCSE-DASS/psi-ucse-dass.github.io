@@ -23,13 +23,13 @@
   </div>
 </section>
 
-{{ with site.GetPage "/eventos/simposio-de-investigacion-2026" }}
+{{ with site.GetPage "/eventos/simposio-de-investigación-2026" }}
 <section class="contenedor seccion">
   <div class="destacado-evento">
     <div>
       <p class="sobretitulo">Evento en curso</p>
       <h2>{{ .Title }}</h2>
-      <p>{{ .Params.fechas }}{{ with .Params.lugar }} · {{ . }}{{ end }}</p>
+      <p>{{ .Params.fecha_texto }}</p>
     </div>
     <a class="btn btn--amarillo" href="{{ .RelPermalink }}">Ver trabajos del evento</a>
   </div>
@@ -38,7 +38,7 @@
 
 <section class="contenedor seccion">
   <div class="seccion__cab">
-    <h2 class="h2">Posters</h2>
+    <h2 class="h2">{{ (site.GetPage "/posters").Title }}</h2>
     <a href="{{ "posters/" | relURL }}">Ver todos →</a>
   </div>
   <div class="grilla">
