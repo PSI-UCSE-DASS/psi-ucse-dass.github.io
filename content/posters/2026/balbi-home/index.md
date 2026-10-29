@@ -2,6 +2,7 @@
 title: "Balbi Home: e-commerce para un comercio real de Jujuy"
 subtitulo: "Aprendizaje basado en proyectos con clientes reales: desarrollo de e-commerce para comercios de Jujuy en la cátedra de Programación II"
 slug: "balbi-home"
+weight: 2
 date: 2026-10-29
 eventos: ["Simposio de Investigación 2026"]
 gabinetes: ["Informática"]

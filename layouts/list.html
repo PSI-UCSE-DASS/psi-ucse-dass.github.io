@@ -8,7 +8,7 @@
 <section class="contenedor seccion">
   {{ if .Pages }}
   <div class="grilla">
-    {{ range .Pages.ByDate.Reverse }}{{ partial "tarjeta.html" . }}{{ end }}
+    {{ range .Pages.ByWeight }}{{ partial "tarjeta.html" . }}{{ end }}
   </div>
   {{ else }}
   <p class="vacio">Todavía no hay trabajos publicados en esta sección.</p>

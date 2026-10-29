@@ -1,6 +1,7 @@
 ---
 title: "Implementación de analítica de datos para la optimización del sistema de emergencias 911 en San Salvador de Jujuy"
 slug: "analitica-911"
+weight: 1
 date: 2026-10-29
 eventos: ["Simposio de Investigación 2026"]
 gabinetes: ["Informática"]

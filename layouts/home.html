@@ -42,7 +42,7 @@
     <a href="{{ "posters/" | relURL }}">Ver todos →</a>
   </div>
   <div class="grilla">
-    {{ range first 9 $posters.ByDate.Reverse }}{{ partial "tarjeta.html" . }}{{ end }}
+    {{ range first 9 $posters.ByWeight }}{{ partial "tarjeta.html" . }}{{ end }}
   </div>
 </section>
 {{ end }}

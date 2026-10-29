@@ -1,6 +1,7 @@
 ---
 title: "Caracterización del sistema productivo de los Valles Templados de Jujuy para la implementación de tecnologías 4.0"
 slug: "caracterizacion-sistema-productivo-valles-templados"
+weight: 2
 date: 2026-10-29
 eventos: ["Simposio de Investigación 2026"]
 gabinetes: ["Informática"]

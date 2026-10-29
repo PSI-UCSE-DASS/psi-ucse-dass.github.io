@@ -2,6 +2,7 @@
 title: "Evaluación de competencias en elicitación de requerimientos: un experimento pedagógico integrando LLMs y LEL"
 subtitulo: "En proyectos de cátedras de las materias Sistemas de Información I y II de la carrera de Ingeniería en Informática del DASS"
 slug: "evaluacion-competencias-elicitacion-llm-lel"
+weight: 1
 date: 2026-10-29
 eventos: ["Simposio de Investigación 2026"]
 gabinetes: ["Informática"]

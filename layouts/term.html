@@ -16,11 +16,11 @@
   {{ $ponencias := where .Pages "Section" "ponencias" }}
   {{ with $posters }}
   <h2 class="h2">{{ (site.GetPage "/posters").Title }}</h2>
-  <div class="grilla">{{ range .ByDate.Reverse }}{{ partial "tarjeta.html" . }}{{ end }}</div>
+  <div class="grilla">{{ range .ByWeight }}{{ partial "tarjeta.html" . }}{{ end }}</div>
   {{ end }}
   {{ with $ponencias }}
   <h2 class="h2">{{ (site.GetPage "/ponencias").Title }}</h2>
-  <div class="grilla">{{ range .ByDate.Reverse }}{{ partial "tarjeta.html" . }}{{ end }}</div>
+  <div class="grilla">{{ range .ByWeight }}{{ partial "tarjeta.html" . }}{{ end }}</div>
   {{ end }}
   {{ if not (or $posters $ponencias) }}<p class="vacio">Todavía no hay trabajos publicados.</p>{{ end }}
 </section>
