@@ -255,3 +255,8 @@ dialog.zoom::backdrop { background: rgba(5, 15, 35, .9); }
 .trabajo__visor .resumen { margin-top: 0; }
 
 .resumen__pend { color: var(--texto-suave); font-style: italic; }
+
+.simposio-marca { margin-left: auto; display: none; background: #fff; padding: 4px 8px; border-radius: 3px; line-height: 0; }
+.simposio-marca img { height: 40px; width: auto; }
+.pie__logo--simposio { display: block; width: 190px; padding: 8px 10px; }
+@media (min-width: 1100px) { .simposio-marca { display: block; } .encabezado__in { gap: 16px; } }
