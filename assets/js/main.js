@@ -63,4 +63,42 @@
       if (el && navigator.clipboard) navigator.clipboard.writeText(el.innerText).then(function () { b.textContent = 'Cita copiada'; });
     });
   });
+  // Descarga del QR con título y autores debajo (sin JS se descarga el QR solo)
+  document.querySelectorAll('[data-qr-descarga]').forEach(function (a) {
+    a.addEventListener('click', function (e) {
+      var img = a.parentNode.querySelector('img');
+      if (!img || !img.complete) return;
+      e.preventDefault();
+      var W = 1200, M = 80, qr = 640, y = M;
+      var c = document.createElement('canvas'), x = c.getContext('2d');
+      var ff = 'Montserrat, Roboto, Arial, sans-serif';
+      var lineas = function (txt, font, ancho) {
+        x.font = font;
+        var out = [], l = '';
+        txt.split(' ').forEach(function (p) {
+          var t = l ? l + ' ' + p : p;
+          if (x.measureText(t).width > ancho && l) { out.push(l); l = p; } else { l = t; }
+        });
+        if (l) out.push(l);
+        return out;
+      };
+      var fT = '700 52px ' + ff, fA = '400 40px ' + ff, fU = '400 32px ' + ff;
+      var T = lineas(a.dataset.titulo, fT, W - 2 * M), A = lineas(a.dataset.autores, fA, W - 2 * M);
+      c.width = W;
+      c.height = M + qr + 60 + T.length * 66 + 20 + A.length * 54 + 30 + 44 + M;
+      x.fillStyle = '#fff'; x.fillRect(0, 0, c.width, c.height);
+      x.imageSmoothingEnabled = false;
+      x.drawImage(img, (W - qr) / 2, y, qr, qr); y += qr + 60;
+      x.fillStyle = '#0B2A55'; x.textAlign = 'center'; x.textBaseline = 'top';
+      x.font = fT; T.forEach(function (l) { x.fillText(l, W / 2, y); y += 66; });
+      y += 20; x.fillStyle = '#333'; x.font = fA;
+      A.forEach(function (l) { x.fillText(l, W / 2, y); y += 54; });
+      y += 30; x.fillStyle = '#555'; x.font = fU; x.fillText(a.dataset.url, W / 2, y);
+      c.toBlob(function (b) {
+        var u = URL.createObjectURL(b), d = document.createElement('a');
+        d.href = u; d.download = a.getAttribute('download'); document.body.appendChild(d); d.click();
+        d.remove(); setTimeout(function () { URL.revokeObjectURL(u); }, 1000);
+      });
+    });
+  });
 })();

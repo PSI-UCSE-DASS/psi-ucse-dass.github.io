@@ -99,7 +99,8 @@
       <div class="qr">
         {{ $qr := images.QR .Permalink (dict "targetDir" "qr" "scale" 6) }}
         <img src="{{ $qr.RelPermalink }}" width="{{ $qr.Width }}" height="{{ $qr.Height }}" alt="Código QR de este trabajo">
-        <a href="{{ $qr.RelPermalink }}" download="qr-{{ .File.ContentBaseName }}.png">Descargar QR</a>
+        {{ $aut := slice }}{{ range .Params.autores }}{{ with site.GetPage (printf "/autores/%s" .) }}{{ $aut = $aut | append .Title }}{{ end }}{{ end }}
+        <a href="{{ $qr.RelPermalink }}" download="qr-{{ .File.ContentBaseName }}.png" data-qr-descarga data-titulo="{{ .Title }}" data-autores="{{ delimit $aut ", " " y " }}" data-url="{{ strings.TrimPrefix "https://" .Permalink }}">Descargar QR</a>
       </div>
       <details class="cita">
         <summary>Cómo citar</summary>
