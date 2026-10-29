@@ -11,7 +11,9 @@
     </div>
     <h1 data-pagefind-meta="title">{{ .Title }}</h1>
     <p class="trabajo__autores">{{ partial "autores-links.html" .Params.autores }}</p>
+    {{ with .Params.subtitulo }}<p class="trabajo__sub">{{ . }}</p>{{ end }}
     {{ with .Params.directores }}<p class="trabajo__dir">Dirección: {{ partial "autores-links.html" . }}</p>{{ end }}
+    {{ with .Params.asesores }}<p class="trabajo__dir">Asesoría metodológica: {{ partial "autores-links.html" . }}</p>{{ end }}
   </header>
 
   <span hidden data-pagefind-filter="Tipo">{{ if eq .Section "posters" }}Poster{{ else }}Ponencia{{ end }}</span>
@@ -40,6 +42,14 @@
           <iframe src="{{ $src }}" title="Poster interactivo: {{ .Title }}" sandbox="allow-scripts allow-popups" loading="lazy"></iframe>
         </div>
         <p><a class="btn btn--sec" href="{{ $src }}" target="_blank" rel="noopener">Abrir el poster interactivo en otra pestaña</a></p>
+      {{ end }}
+      {{ with .Params.poster_html }}
+        <details class="interactivo">
+          <summary>Ver la versión interactiva del poster</summary>
+          <div class="visor__html visor__html--ancho">
+            <iframe src="{{ . | relURL }}" title="Versión interactiva: {{ $.Title }}" sandbox="allow-scripts" loading="lazy"></iframe>
+          </div>
+        </details>
       {{ end }}
       {{ range .Params.fotos }}
         {{ with $.Resources.GetMatch .archivo }}{{ $f := .Resize "1200x webp" }}
