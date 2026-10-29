@@ -14,11 +14,14 @@
 
 {{ $posters := where site.RegularPages "Section" "posters" }}
 {{ $ponencias := where site.RegularPages "Section" "ponencias" }}
+{{/* Personas únicas que figuran como autoras (sin contar directores/asesores ni repetidos) */}}
+{{ $autoras := slice }}
+{{ range $posters | append $ponencias }}{{ range .Params.autores }}{{ $autoras = $autoras | append . }}{{ end }}{{ end }}
 <section class="contenedor seccion">
   <div class="cifras">
     <div><strong>{{ len $posters }}</strong><span>posters</span></div>
     <div><strong>{{ len $ponencias }}</strong><span>ponencias</span></div>
-    <div><strong>{{ len (where site.RegularPages "Section" "autores") }}</strong><span>autores</span></div>
+    <div><strong>{{ len ($autoras | uniq) }}</strong><span>autores</span></div>
   </div>
 </section>
 
