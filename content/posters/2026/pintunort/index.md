@@ -2,7 +2,7 @@
 title: "PintuNort: tienda online para una pinturería de San Salvador de Jujuy"
 subtitulo: "Aprendizaje basado en proyectos con clientes reales: desarrollo de e-commerce para comercios de Jujuy en la cátedra de Programación II"
 slug: "pintunort"
-weight: 4
+weight: 5
 date: 2026-10-29
 eventos: ["Simposio de Investigación 2026"]
 gabinetes: ["Informática"]

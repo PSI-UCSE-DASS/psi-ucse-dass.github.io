@@ -2,7 +2,7 @@
 title: "Tecno X: la tienda online de un comercio de tecnología de Jujuy"
 subtitulo: "Aprendizaje basado en proyectos con clientes reales: desarrollo de e-commerce para comercios de Jujuy en la cátedra de Programación II"
 slug: "tecno-x"
-weight: 5
+weight: 6
 date: 2026-10-29
 eventos: ["Simposio de Investigación 2026"]
 gabinetes: ["Informática"]
