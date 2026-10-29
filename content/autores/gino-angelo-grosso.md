@@ -1,5 +1,5 @@
 ---
-title: "Gino Angelo Grosso"
+title: "Gino Ángelo Grosso"
 rol: "estudiante"
 carrera: "Estudiante DASS UCSE"
 gabinetes: ["Informática"]
