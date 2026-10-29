@@ -33,7 +33,10 @@ def main():
             nombre = md.relative_to(RAIZ)
             if fm.get("draft", "").lower() == "true":
                 continue
+            pendiente = fm.get("resumen_pendiente", "").lower() == "true"
             for campo in OBLIGATORIOS:
+                if pendiente and campo in ("resumen", "palabras-clave"):
+                    continue
                 if not fm.get(campo) or fm.get(campo) in ("[]", '""'):
                     errores.append(f"{nombre}: falta «{campo}»")
             if fm.get("consentimiento", "").lower() not in ("true", "si", "sí"):

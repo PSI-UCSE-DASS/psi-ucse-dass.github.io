@@ -253,3 +253,5 @@ dialog.zoom::backdrop { background: rgba(5, 15, 35, .9); }
 
 .tarjeta__ph { text-decoration: none; letter-spacing: .12em; background: linear-gradient(135deg, var(--superficie), var(--borde)); }
 .trabajo__visor .resumen { margin-top: 0; }
+
+.resumen__pend { color: var(--texto-suave); font-style: italic; }

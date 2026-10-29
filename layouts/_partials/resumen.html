@@ -1,5 +1,6 @@
 <section class="resumen">
     <h2 class="h2">Resumen</h2>
+    {{ if .Params.resumen_pendiente }}<p class="resumen__pend">Resumen próximamente.</p>{{ end }}
     {{ with .Params.resumen }}<p>{{ . }}</p>{{ end }}
     {{ .Content }}
   </section>
