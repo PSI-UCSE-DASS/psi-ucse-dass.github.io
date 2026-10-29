@@ -1,5 +1,5 @@
 ---
-title: "Melani Valdez"
+title: "Melani Agustina Valdez"
 rol: "estudiante"
 carrera: "Estudiante DASS UCSE"
 gabinetes: ["Informática"]

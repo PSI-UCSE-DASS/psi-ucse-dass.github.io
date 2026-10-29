@@ -5,7 +5,7 @@ slug: "balbi-home"
 date: 2026-10-29
 eventos: ["Simposio de Investigación 2026"]
 gabinetes: ["Informática"]
-autores: ["elina-luisana-copa", "lucas-santiago-perez", "melani-valdez"]
+autores: ["elina-luisana-copa", "lucas-santiago-perez", "melani-agustina-valdez"]
 directores: ["fabio-arganaraz", "fernando-sanchez", "jorge-zoto"]
 palabras-clave: ["e-commerce", "aprendizaje basado en proyectos", "desarrollo web", "Programación II"]
 linea: "Proyecto Integrador · Programación II"
