@@ -2,7 +2,7 @@
 title: "Agentes de IA y Protocolo MCP para evaluación continua y autoevaluación en materias de Ingeniería en Informática"
 subtitulo: "Ejercicios, trabajos prácticos y exámenes generados por agentes bajo especificación, con autoevaluación inmediata y supervisión docente · UCSE + UNJu"
 slug: "agentes-ia-mcp"
-weight: 6
+weight: 2
 date: 2026-10-29
 eventos: ["Simposio de Investigación 2026"]
 gabinetes: ["Informática"]

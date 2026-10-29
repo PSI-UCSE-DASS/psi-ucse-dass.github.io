@@ -2,7 +2,7 @@
 title: "Investigación aplicada sobre Tándem, red de tutorías y trabajos finales de grado"
 subtitulo: "Cómo medir, con datos de Tándem, qué hace que un docente acepte dirigir un trabajo final de grado y si asistir a tutorías entre pares ayuda a aprobar la materia"
 slug: "aplicada"
-weight: 5
+weight: 7
 date: 2026-10-29
 eventos: ["Simposio de Investigación 2026"]
 gabinetes: ["Informática"]

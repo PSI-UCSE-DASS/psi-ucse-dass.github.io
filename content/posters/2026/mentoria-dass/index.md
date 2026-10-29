@@ -2,7 +2,7 @@
 title: "Mentoría DASS: plataforma digital de acompañamiento académico y de tesis"
 subtitulo: "Del prototipo al proyecto: formulación de investigaciones aplicadas y tecnológicas desde la cátedra de Innovación e Investigación Tecnológica"
 slug: "mentoria-dass"
-weight: 7
+weight: 6
 date: 2026-10-29
 eventos: ["Simposio de Investigación 2026"]
 gabinetes: ["Informática"]
