@@ -1,10 +1,6 @@
 ---
-title: "Simposio de Investigación 2026"
-fechas: "29 y 30 de octubre de 2026"
-lugar: "UCSE, sede San Salvador de Jujuy"
+title: "VIII Simposio de Investigación 2026"
 ---
-**VIII Simposio de Investigación**
-
 “InnovAcción Global: Universidad, Economía del Conocimiento y Transformación Digital en Sectores Estratégicos”
 
 Jujuy, 29 y 30 de octubre de 2026
