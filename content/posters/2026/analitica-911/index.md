@@ -7,6 +7,7 @@ gabinetes: ["Informática"]
 autores: ["andrea-velazquez", "matias-cazon"]
 asesores: ["gabriela-bejarano"]
 palabras-clave: ["analítica de datos", "emergencias 911", "data warehouse", "series de tiempo", "Jujuy"]
+mesa: "Jóvenes investigadores en acción: pósters digitales en informática y transformación digital"
 linea: "Convocatoria Iniciación a la Investigación 2025-2026 · Gabinete de Investigación en Informática y Tecnología"
 poster: "poster.jpg"
 poster_tipo: "imagen"

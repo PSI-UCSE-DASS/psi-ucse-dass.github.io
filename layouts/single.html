@@ -24,6 +24,7 @@
 
   <div class="trabajo__grid">
     <div class="trabajo__visor">
+      {{ if eq $tipo "ninguno" }}{{ partial "resumen.html" . }}{{ end }}
       {{ if and $archivo (eq $tipo "imagen") }}
         {{ $med := $archivo.Resize "1600x webp" }}
         <figure class="visor">
@@ -109,11 +110,7 @@
     </aside>
   </div>
 
-  <section class="resumen">
-    <h2 class="h2">Resumen</h2>
-    {{ with .Params.resumen }}<p>{{ . }}</p>{{ end }}
-    {{ .Content }}
-  </section>
+  {{ if ne $tipo "ninguno" }}{{ partial "resumen.html" . }}{{ end }}
 
   {{ $rel := site.RegularPages.Related . | complement (slice .) | first 3 }}
   {{ with $rel }}

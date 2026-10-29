@@ -8,6 +8,7 @@ gabinetes: ["Informática"]
 autores: ["francisco-mendoza", "marco-castillo", "maximiliano-sajama"]
 directores: ["fernando-sanchez", "fabio-arganaraz", "jorge-zoto"]
 palabras-clave: ["e-commerce", "aprendizaje basado en proyectos", "desarrollo web", "Programación II"]
+mesa: "Jóvenes investigadores en acción: pósters digitales en informática y transformación digital"
 linea: "Proyecto Integrador · Programación II"
 poster: "poster.png"
 poster_tipo: "imagen"

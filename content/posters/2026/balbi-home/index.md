@@ -8,6 +8,7 @@ gabinetes: ["Informática"]
 autores: ["elina-luisana-copa", "lucas-santiago-perez", "melani-agustina-valdez"]
 directores: ["fabio-arganaraz", "fernando-sanchez", "jorge-zoto"]
 palabras-clave: ["e-commerce", "aprendizaje basado en proyectos", "desarrollo web", "Programación II"]
+mesa: "Jóvenes investigadores en acción: pósters digitales en informática y transformación digital"
 linea: "Proyecto Integrador · Programación II"
 poster: "poster.png"
 poster_tipo: "imagen"

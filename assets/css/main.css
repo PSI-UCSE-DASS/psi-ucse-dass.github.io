@@ -250,3 +250,6 @@ dialog.zoom::backdrop { background: rgba(5, 15, 35, .9); }
 .interactivo { margin-top: 16px; border: 1px solid var(--borde); padding: 12px 16px; background: var(--superficie); }
 .interactivo summary { cursor: pointer; font-weight: 700; }
 .visor__html--ancho { aspect-ratio: 16 / 9; margin-top: 12px; }
+
+.tarjeta__ph { text-decoration: none; letter-spacing: .12em; background: linear-gradient(135deg, var(--superficie), var(--borde)); }
+.trabajo__visor .resumen { margin-top: 0; }

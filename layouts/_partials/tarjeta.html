@@ -3,7 +3,7 @@
     {{ with partial "miniatura.html" (dict "page" . "ancho" 640) }}
       <img src="{{ .RelPermalink }}" width="{{ .Width }}" height="{{ .Height }}" alt="" loading="lazy">
     {{ else }}
-      <span class="tarjeta__ph">{{ upper (.Params.poster_tipo | default "poster") }}</span>
+      <span class="tarjeta__ph">{{ if eq .Section "ponencias" }}PONENCIA{{ else }}POSTER{{ end }}</span>
     {{ end }}
     {{ with .Params.video }}<span class="chip-video">▶ Pitch</span>{{ end }}
   </a>
