@@ -2,7 +2,7 @@
 title: "Implementación de un sistema de comunicación inalámbrica usando módulos con tecnología LoRa"
 slug: "sistema-comunicacion-inalambrica-lora"
 weight: 4
-date: 2026-10-29
+date: 2026-10-30
 eventos: ["Simposio de Investigación 2026"]
 gabinetes: ["Informática"]
 autores: ["alberto-rodolfo-ramos", "analia-tejerina", "martin-vercellone", "mariano-reynaga-ducos", "francisco-matos", "brandon-cuellar-cisneros", "luciana-mariel-zapana"]

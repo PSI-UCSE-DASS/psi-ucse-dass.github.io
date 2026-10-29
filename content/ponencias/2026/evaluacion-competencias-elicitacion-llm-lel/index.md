@@ -3,7 +3,7 @@ title: "Evaluación de competencias en elicitación de requerimientos: un experi
 subtitulo: "En proyectos de cátedras de las materias Sistemas de Información I y II de la carrera de Ingeniería en Informática del DASS"
 slug: "evaluacion-competencias-elicitacion-llm-lel"
 weight: 1
-date: 2026-10-29
+date: 2026-10-30
 eventos: ["Simposio de Investigación 2026"]
 gabinetes: ["Informática"]
 autores: ["eduardo-a-graneros", "hector-p-liberatori", "fabiana-j-chiquello", "mirta-e-blas", "zoe-lihue-pereyra", "samara-nur-zamar"]

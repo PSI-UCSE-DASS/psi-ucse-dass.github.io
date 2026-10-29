@@ -2,7 +2,7 @@
 title: "Datos urbanos abiertos + variables psicosociales para una gestión pública basada en evidencia"
 slug: "datos-urbanos-abiertos-variables-psicosociales"
 weight: 3
-date: 2026-10-29
+date: 2026-10-30
 eventos: ["Simposio de Investigación 2026"]
 gabinetes: ["Informática"]
 autores: ["melina-s-audisio", "claudia-a-panica", "liliana-n-gonzalez"]
