@@ -1,12 +1,12 @@
 <article class="tarjeta">
-  <a class="tarjeta__img" href="{{ .RelPermalink }}" tabindex="-1" aria-hidden="true">
-    {{ with partial "miniatura.html" (dict "page" . "ancho" 640) }}
-      <img src="{{ .RelPermalink }}" width="{{ .Width }}" height="{{ .Height }}" alt="" loading="lazy">
-    {{ else }}
-      <span class="tarjeta__ph">{{ if eq .Section "ponencias" }}PONENCIA{{ else }}POSTER{{ end }}</span>
-    {{ end }}
-    {{ with .Params.video }}<span class="chip-video">▶ Pitch</span>{{ end }}
+  {{ with partial "miniatura.html" (dict "page" . "ancho" 640) }}
+  <a class="tarjeta__img" href="{{ $.RelPermalink }}" tabindex="-1" aria-hidden="true">
+    <img src="{{ .RelPermalink }}" width="{{ .Width }}" height="{{ .Height }}" alt="" loading="lazy">
+    {{ with $.Params.video }}<span class="chip-video">▶ Pitch</span>{{ end }}
   </a>
+  {{ else }}
+    {{ with .Params.video }}<span class="chip-video chip-video--solo">▶ Pitch</span>{{ end }}
+  {{ end }}
   <div class="tarjeta__cuerpo">
     {{ range .GetTerms "gabinetes" }}<a class="etiqueta" href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>{{ end }}
     <h3 class="tarjeta__titulo"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>

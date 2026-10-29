@@ -3,6 +3,7 @@
   <div class="contenedor">
     <h1>{{ .Title }}</h1>
     {{ with .Content }}<div class="cabecera__txt">{{ . }}</div>{{ end }}
+    {{ if in (slice "posters" "ponencias") .Section }}{{ partial "responsable.html" .RegularPagesRecursive }}{{ end }}
   </div>
 </section>
 <section class="contenedor seccion">

@@ -1,0 +1,4 @@
+{{/* Indica el gabinete responsable de la sección. Recibe la colección de páginas de la sección. */}}
+{{- with index . 0 -}}{{- with .GetTerms "gabinetes" -}}
+<p class="responsable">A cargo del {{ range $i, $g := . }}{{ if $i }} y del {{ end }}<a href="{{ $g.RelPermalink }}">{{ $g.Params.nombre_completo | default $g.LinkTitle }}</a>{{ end }}.</p>
+{{- end -}}{{- end -}}

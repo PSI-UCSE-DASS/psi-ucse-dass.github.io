@@ -260,3 +260,8 @@ dialog.zoom::backdrop { background: rgba(5, 15, 35, .9); }
 .simposio-marca img { height: 40px; width: auto; }
 .pie__logo--simposio { display: block; width: 190px; padding: 8px 10px; }
 @media (min-width: 1100px) { .simposio-marca { display: block; } .encabezado__in { gap: 16px; } }
+
+.bloque + .bloque { margin-top: 72px; }
+.bloque .h2 { margin-bottom: 4px; }
+.responsable { margin: 0 0 20px; color: var(--texto-suave); font-size: .92rem; }
+.chip-video--solo { position: static; display: inline-block; margin: 12px 0 0 16px; }
