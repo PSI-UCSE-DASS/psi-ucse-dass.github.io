@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{{ if .IsHome }}{{ site.Title }}{{ else }}{{ .Title }} · PSI-UCSE{{ end }}</title>
+  <title>{{ if .IsHome }}{{ site.Title }}{{ else }}{{ .Title }} · {{ site.Title }}{{ end }}</title>
   {{ $desc := .Params.resumen | default .Description | default site.Params.descripcion }}
   <meta name="description" content="{{ $desc | plainify | truncate 160 }}">
   <meta property="og:title" content="{{ .Title }}">

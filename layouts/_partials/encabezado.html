@@ -9,9 +9,9 @@
 </div>
 <header class="encabezado">
   <div class="contenedor encabezado__in">
-    <a class="marca" href="{{ "/" | relURL }}" aria-label="Inicio del repositorio PSI-UCSE">
+    <a class="marca" href="{{ "/" | relURL }}" aria-label="Inicio: {{ site.Title }}">
       {{ partial "logo.html" . }}
-      <span class="marca__txt"><strong>Repositorio de Investigación</strong><small>PSI · UCSE Jujuy</small></span>
+      <span class="marca__txt"><strong>{{ site.Title }}</strong><small>UCSE Jujuy</small></span>
     </a>
     <a class="simposio-marca" href="{{ "eventos/simposio-de-investigacion-2026/" | relURL }}"><img src="{{ "img/simposio-logo.png" | relURL }}" alt="VIII Simposio de Investigación, Jujuy, 29 y 30 de octubre de 2026" width="180" height="40"></a>
     <button class="menu-btn" aria-expanded="false" aria-controls="menu" aria-label="Abrir menú">
@@ -20,8 +20,8 @@
     <nav id="menu" class="menu" aria-label="Principal">
       <ul>
         {{ $actual := . }}
-        {{ range site.Menus.main }}
-        <li><a href="{{ .URL }}" {{ if or ($actual.IsMenuCurrent "main" .) ($actual.HasMenuCurrent "main" .) }}aria-current="page"{{ end }}>{{ .Name }}</a></li>
+        {{ range site.Menus.main }}{{ if not .Params.oculto }}
+        <li><a href="{{ .URL }}" {{ if or ($actual.IsMenuCurrent "main" .) ($actual.HasMenuCurrent "main" .) }}aria-current="page"{{ end }}>{{ .Name }}</a></li>{{ end }}
         {{ end }}
       </ul>
       <button class="tema-btn" type="button" aria-label="Cambiar entre modo claro y oscuro">

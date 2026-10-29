@@ -2,8 +2,8 @@
 <section class="hero">
   <div class="contenedor hero__in">
     <p class="hero__pre">Prosecretaría de Investigación · UCSE Jujuy</p>
-    <h1 class="hero__titulo">Repositorio de investigación</h1>
-    <p class="hero__sub">Posters digitales, ponencias y proyectos de docentes y estudiantes.</p>
+    <h1 class="hero__titulo">{{ site.Title }}</h1>
+    <p class="hero__sub">Posters digitales y ponencias del VIII Simposio de Investigación 2026.</p>
     <form class="hero__buscar" action="{{ "buscar/" | relURL }}" role="search">
       <label class="sr" for="q">Buscar trabajos</label>
       <input id="q" name="q" type="search" placeholder="Buscar por título, autor o palabra clave">
@@ -19,7 +19,6 @@
     <div><strong>{{ len $posters }}</strong><span>posters</span></div>
     <div><strong>{{ len $ponencias }}</strong><span>ponencias</span></div>
     <div><strong>{{ len (where site.RegularPages "Section" "autores") }}</strong><span>autores</span></div>
-    <div><strong>{{ len (site.Taxonomies.gabinetes) }}</strong><span>gabinetes</span></div>
   </div>
 </section>
 
@@ -41,8 +40,22 @@
     <h2 class="h2">{{ (site.GetPage "/posters").Title }}</h2>
     <a href="{{ "posters/" | relURL }}">Ver todos →</a>
   </div>
+  {{ partial "responsable.html" $posters }}
   <div class="grilla">
     {{ range first 9 $posters.ByWeight }}{{ partial "tarjeta.html" . }}{{ end }}
   </div>
 </section>
+
+{{ with $ponencias }}
+<section class="contenedor seccion bloque">
+  <div class="seccion__cab">
+    <h2 class="h2">{{ (site.GetPage "/ponencias").Title }}</h2>
+    <a href="{{ "ponencias/" | relURL }}">Ver todas →</a>
+  </div>
+  {{ partial "responsable.html" . }}
+  <div class="grilla">
+    {{ range first 9 .ByWeight }}{{ partial "tarjeta.html" . }}{{ end }}
+  </div>
+</section>
+{{ end }}
 {{ end }}

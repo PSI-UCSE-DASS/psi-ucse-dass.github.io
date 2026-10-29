@@ -1,14 +1,14 @@
 baseURL = "https://psi-ucse-dass.github.io/"
 languageCode = "es-ar"
 defaultContentLanguage = "es"
-title = "Repositorio de Investigación · PSI-UCSE"
+title = "Gabinete de Investigación en Informática y Tecnología"
 enableRobotsTXT = true
 buildFuture = true
 titleCaseStyle = "firstupper"
 removePathAccents = true
 
 [params]
-  descripcion = "Posters, ponencias y proyectos de investigación de la Prosecretaría de Investigación de la Universidad Católica de Santiago del Estero, sede San Salvador de Jujuy."
+  descripcion = "Posters y ponencias del Gabinete de Investigación en Informática y Tecnología, Universidad Católica de Santiago del Estero, sede San Salvador de Jujuy."
   institucion = "Universidad Católica de Santiago del Estero · Sede San Salvador de Jujuy"
   lema = "Scientia Deo et Patriae Servire"
   contacto = "gabriela.bejarano@ucse.edu.ar"
@@ -44,10 +44,14 @@ removePathAccents = true
     name = "Gabinetes"
     pageRef = "/gabinetes"
     weight = 40
+    [menus.main.params]
+      oculto = true
   [[menus.main]]
     name = "Eventos"
     pageRef = "/eventos"
     weight = 50
+    [menus.main.params]
+      oculto = true
   [[menus.main]]
     name = "Buscar"
     pageRef = "/buscar"
