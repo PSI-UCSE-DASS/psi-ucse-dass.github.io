@@ -6,7 +6,7 @@ date: 2026-10-29
 eventos: ["Simposio de Investigación 2026"]
 gabinetes: ["Informática"]
 autores: ["martin-sadir", "francisco-matos", "matias-campos"]
-directores: ["laura-garay"]
+directores: ["fabio-arganaraz", "fernando-sanchez", "jorge-zoto"]
 palabras-clave: ["e-commerce", "aprendizaje basado en proyectos", "desarrollo web", "Programación II"]
 linea: "Proyecto Integrador · Programación II"
 poster: "poster.png"
