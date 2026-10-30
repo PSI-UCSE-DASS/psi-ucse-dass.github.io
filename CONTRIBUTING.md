@@ -31,4 +31,10 @@ Reglas:
 
 ## Flujo de trabajo
 
-Los cambios se preparan en una rama aparte y se pasan a `main` solo cuando se aprueba la publicación, porque cada cambio en `main` publica el sitio.
+Cada cambio en `main` publica el sitio, por eso `main` solo recibe cambios aprobados, mediante Pull Request.
+
+1. Los cambios se preparan en una rama aparte (`cambios-pendientes-N`) y se suben a GitHub. Nada se sube directamente a `main`.
+2. Cuando se aprueba la publicación, se abre un Pull Request hacia `main`. El título del PR también sigue Conventional Commits (por ejemplo `feat(galeria): agregar visor de fotos`).
+3. El merge lo hace la persona responsable desde la web de GitHub, no se hace desde la línea de comandos ni por herramientas automáticas.
+4. En la página del PR, usar el botón verde **Squash and merge** (o **Merge pull request**) y confirmar. Al hacerlo desde la web con la sesión de GitHub, el commit resultante sale como **Verified**.
+5. Al terminar el merge, la acción de publicación (pestaña **Actions**) despliega el sitio automáticamente en unos minutos.
