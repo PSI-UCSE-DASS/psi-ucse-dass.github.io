@@ -1,0 +1,35 @@
+{{ define "main" }}
+<section class="cabecera">
+  <div class="contenedor">
+    <p class="sobretitulo">{{ with site.GetPage "/eventos/viii-simposio-de-investigación" }}<a href="{{ .RelPermalink }}">{{ .Title }}</a>{{ end }}</p>
+    <h1>{{ .Title }}</h1>
+    {{ with .Params.subtitulo }}<p class="cabecera__meta">{{ . }}</p>{{ end }}
+    {{ with .Content }}<div class="cabecera__txt">{{ . }}</div>{{ end }}
+  </div>
+</section>
+<section class="contenedor seccion">
+  {{ $fotos := .Params.fotos }}
+  <ul class="galeria" data-galeria>
+    {{ range $i, $f := $fotos }}
+      {{ with resources.Get (printf "galeria/%s" $f.archivo) }}
+        {{ $mini := .Resize "560x webp q75" }}
+        {{ $gran := .Resize "1600x webp q82" }}
+        <li>
+          <button type="button" class="galeria__foto" data-grande="{{ $gran.RelPermalink }}" data-alt="{{ $f.alt }}" aria-label="Ampliar foto {{ add $i 1 }} de {{ len $fotos }}: {{ $f.alt }}">
+            <img src="{{ $mini.RelPermalink }}" width="{{ $mini.Width }}" height="{{ $mini.Height }}" alt="{{ $f.alt }}" loading="lazy" decoding="async">
+          </button>
+        </li>
+      {{ end }}
+    {{ end }}
+  </ul>
+</section>
+<dialog class="galeria-visor" aria-label="Visor de fotos">
+  <button class="zoom__cerrar" type="button" aria-label="Cerrar">✕</button>
+  <button class="galeria-visor__nav galeria-visor__nav--prev" type="button" aria-label="Foto anterior">‹</button>
+  <figure>
+    <img alt="">
+    <figcaption><span data-pie></span> <small data-cuenta></small></figcaption>
+  </figure>
+  <button class="galeria-visor__nav galeria-visor__nav--sig" type="button" aria-label="Foto siguiente">›</button>
+</dialog>
+{{ end }}

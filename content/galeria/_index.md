@@ -1,0 +1,26 @@
+---
+title: "Galería de fotos"
+subtitulo: "Jornada del VIII Simposio de Investigación · Jujuy, 29 y 30 de octubre de 2026"
+fotos:
+  - archivo: "foto-07.jpeg"
+    alt: "Fotografía grupal de docentes y estudiantes frente a un póster impreso, en un pasillo de paredes amarillas."
+  - archivo: "foto-01.jpeg"
+    alt: "Aula de informática con asistentes sentados frente a las computadoras mientras una persona de pie presenta."
+  - archivo: "foto-04.jpeg"
+    alt: "Pantalla del aula con el póster digital de Tecno X, con dos expositores al frente y público sentado."
+  - archivo: "foto-03.jpeg"
+    alt: "Pantalla del aula con el póster digital de Mentoría DASS y su código QR, con dos expositores sentados al frente."
+  - archivo: "foto-06.jpeg"
+    alt: "Un expositor explica frente a una pantalla que muestra una diapositiva sobre cómo dar feedback a tiempo a unos 100 estudiantes."
+  - archivo: "foto-05.jpeg"
+    alt: "Vista del aula con una pantalla en la pared que muestra un póster digital y asistentes sentados frente a las computadoras."
+  - archivo: "foto-08.jpeg"
+    alt: "Dos personas de pie junto a una pantalla que muestra un póster digital, durante una presentación."
+  - archivo: "foto-10.jpeg"
+    alt: "Una expositora de pie en el aula presenta junto a una pantalla con un póster digital."
+  - archivo: "foto-02.jpeg"
+    alt: "Vista general del aula con la pantalla al fondo y el público sentado frente a las computadoras."
+  - archivo: "foto-09.jpeg"
+    alt: "Mesa con sándwiches y vasos durante el momento del café, con asistentes conversando de pie."
+---
+Momentos de la jornada de presentación de posters y ponencias.

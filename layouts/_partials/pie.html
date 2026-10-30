@@ -12,6 +12,7 @@
       <p>Contacto: <a href="mailto:{{ site.Params.contacto }}">{{ site.Params.contacto }}</a></p>
       <p>Los trabajos se publican con autorización de sus autores bajo licencia
         <a href="{{ site.Params.licenciaURL }}" rel="license noopener">{{ site.Params.licencia }}</a>, salvo indicación en contrario.</p>
+      {{ with site.GetPage "/galeria" }}<p><a href="{{ .RelPermalink }}">Galería de fotos</a></p>{{ end }}
       <p>© {{ now.Year }} PSI-UCSE</p>
     </div>
   </div>

@@ -29,5 +29,8 @@
   </div>
   {{ end }}
   {{ if not (or $posters $ponencias) }}<p class="vacio">Todavía no hay trabajos publicados.</p>{{ end }}
+  {{ if and (eq .Data.Singular "evento") (site.GetPage "/galeria") }}
+  <p class="enlace-galeria"><a href="{{ (site.GetPage "/galeria").RelPermalink }}">Ver la galería de fotos de la jornada →</a></p>
+  {{ end }}
 </section>
 {{ end }}

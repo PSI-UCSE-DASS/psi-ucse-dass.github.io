@@ -79,6 +79,31 @@
     dh.addEventListener('close', function () { clearTimeout(temporizador); fr.onload = null; fr.removeAttribute('src'); });
   }
 
+  // Galería de fotos: visor con flechas, teclado y cierre
+  var gal = document.querySelector('[data-galeria]');
+  var gv = document.querySelector('dialog.galeria-visor');
+  if (gal && gv && gv.showModal) {
+    var botones = Array.prototype.slice.call(gal.querySelectorAll('.galeria__foto'));
+    var gimg = gv.querySelector('img');
+    var actual = 0;
+    var mostrar = function (i) {
+      actual = (i + botones.length) % botones.length;
+      var b = botones[actual];
+      gimg.src = b.dataset.grande;
+      gimg.alt = b.dataset.alt;
+      gv.querySelector('[data-pie]').textContent = b.dataset.alt;
+      gv.querySelector('[data-cuenta]').textContent = (actual + 1) + ' / ' + botones.length;
+    };
+    botones.forEach(function (b, i) { b.addEventListener('click', function () { mostrar(i); gv.showModal(); }); });
+    gv.querySelector('.galeria-visor__nav--prev').addEventListener('click', function () { mostrar(actual - 1); });
+    gv.querySelector('.galeria-visor__nav--sig').addEventListener('click', function () { mostrar(actual + 1); });
+    gv.querySelector('.zoom__cerrar').addEventListener('click', function () { gv.close(); });
+    gv.addEventListener('keydown', function (e) {
+      if (e.key === 'ArrowLeft') { mostrar(actual - 1); } else if (e.key === 'ArrowRight') { mostrar(actual + 1); }
+    });
+    gv.addEventListener('close', function () { gimg.removeAttribute('src'); });
+  }
+
   // Compartir y copiar
   document.querySelectorAll('[data-compartir]').forEach(function (b) {
     b.addEventListener('click', function () {

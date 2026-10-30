@@ -278,3 +278,24 @@ dialog.zoom--html iframe { width: 100%; height: 100%; border: 0; background: #ff
 
 .enlaces-proyecto { display: flex; flex-wrap: wrap; gap: 10px; margin: 14px 0 0; }
 .cifras small { display: block; margin-top: 6px; color: var(--texto-suave); font-size: .85rem; }
+
+/* Galería de fotos */
+.enlace-galeria { margin: 56px 0 0; font-weight: 700; }
+.galeria { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 12px; }
+.galeria__foto { display: block; width: 100%; padding: 0; border: 1px solid var(--borde); background: var(--superficie); cursor: zoom-in; aspect-ratio: 4 / 3; overflow: hidden; }
+.galeria__foto img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.galeria__foto:focus-visible { outline: 3px solid var(--amarillo); outline-offset: 2px; }
+dialog.galeria-visor { width: 100vw; height: 100vh; height: 100dvh; max-width: none; max-height: none; margin: 0; padding: 0; border: 0; background: rgba(5, 15, 35, .96); color: #fff; overflow: hidden; }
+dialog.galeria-visor::backdrop { background: rgba(5, 15, 35, .9); }
+dialog.galeria-visor[open] { display: grid; grid-template-columns: 56px 1fr 56px; align-items: center; }
+.galeria-visor figure { margin: 0; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; min-width: 0; padding: 56px 0 12px; }
+.galeria-visor img { max-width: 100%; max-height: calc(100% - 64px); object-fit: contain; }
+.galeria-visor figcaption { margin-top: 10px; padding: 0 8px; text-align: center; font-size: .9rem; max-width: 70ch; }
+.galeria-visor figcaption small { display: block; margin-top: 4px; color: #b8c4d8; }
+.galeria-visor__nav { width: 48px; height: 48px; margin: 0 4px; border-radius: 50%; border: 0; background: rgba(255,255,255,.18); color: #fff; font-size: 2rem; line-height: 1; cursor: pointer; }
+.galeria-visor__nav:hover, .galeria-visor__nav:focus-visible { background: #FFD200; color: #0B2A55; }
+@media (max-width: 600px) {
+  .galeria { grid-template-columns: repeat(2, 1fr); }
+  dialog.galeria-visor[open] { grid-template-columns: 36px 1fr 36px; }
+  .galeria-visor__nav { width: 34px; height: 34px; font-size: 1.5rem; margin: 0 1px; }
+}
