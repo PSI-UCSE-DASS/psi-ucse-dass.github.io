@@ -2,7 +2,7 @@
 <section class="cabecera">
   <div class="contenedor autor" data-pagefind-body>
     <span hidden data-pagefind-filter="Tipo">Autor</span>
-    {{ with .Resources.GetMatch "foto.*" }}{{ $f := .Fill "240x240 webp" }}<img class="autor__foto" src="{{ $f.RelPermalink }}" alt="Foto de {{ $.Title }}" width="120" height="120">{{ else }}<span class="autor__inicial" aria-hidden="true">{{ substr .Title 0 1 }}</span>{{ end }}
+    {{ with .Resources.GetMatch "foto.*" }}{{ $f := .Fill "240x240 webp" }}<img class="autor__foto" src="{{ $f.RelPermalink }}" alt="Foto de {{ $.Title }}" width="120" height="120">{{ else }}<span class="autor__inicial" aria-hidden="true">{{ substr (.Params.apellido | default .Title) 0 1 }}</span>{{ end }}
     <div>
       <p class="sobretitulo">{{ .Params.rol | humanize }}</p>
       <h1>{{ .Title }}</h1>
