@@ -41,6 +41,10 @@ removePathAccents = true
     pageRef = "/autores"
     weight = 30
   [[menus.main]]
+    name = "Galería"
+    pageRef = "/galeria"
+    weight = 35
+  [[menus.main]]
     name = "Gabinetes"
     pageRef = "/gabinetes"
     weight = 40
