@@ -1,5 +1,6 @@
 ---
 title: "Francisco Matos"
+apellido: "Matos"
 rol: "estudiante"
 carrera: "Estudiante DASS UCSE"
 gabinetes: ["Informática"]

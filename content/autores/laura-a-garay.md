@@ -1,5 +1,6 @@
 ---
 title: "Laura A. Garay"
+apellido: "Garay"
 rol: "docente"
 carrera: "DASS UCSE"
 gabinetes: ["Informática"]

@@ -1,5 +1,6 @@
 ---
 title: "Matías Campos"
+apellido: "Campos"
 rol: "estudiante"
 carrera: "Estudiante DASS UCSE"
 gabinetes: ["Informática"]

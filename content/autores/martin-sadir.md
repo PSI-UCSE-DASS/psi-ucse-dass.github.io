@@ -1,5 +1,6 @@
 ---
 title: "Martín Sadir"
+apellido: "Sadir"
 rol: "estudiante"
 carrera: "Estudiante DASS UCSE"
 gabinetes: ["Informática"]

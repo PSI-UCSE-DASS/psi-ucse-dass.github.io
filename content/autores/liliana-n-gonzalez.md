@@ -1,5 +1,6 @@
 ---
 title: "Liliana N. González"
+apellido: "González"
 rol: "docente"
 carrera: "DASS UCSE"
 gabinetes: ["Informática"]

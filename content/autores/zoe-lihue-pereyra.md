@@ -1,5 +1,6 @@
 ---
 title: "Zoe Lihue Pereyra"
+apellido: "Pereyra"
 rol: "estudiante"
 carrera: "Estudiante DASS UCSE"
 gabinetes: ["Informática"]

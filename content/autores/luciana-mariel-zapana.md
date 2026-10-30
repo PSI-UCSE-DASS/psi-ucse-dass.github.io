@@ -1,5 +1,6 @@
 ---
 title: "Luciana Mariel Zapana"
+apellido: "Zapana"
 rol: "estudiante"
 carrera: "Estudiante DASS UCSE"
 gabinetes: ["Informática"]

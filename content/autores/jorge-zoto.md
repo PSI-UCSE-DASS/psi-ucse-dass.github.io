@@ -1,5 +1,6 @@
 ---
 title: "Jorge A. Zoto"
+apellido: "Zoto"
 rol: "docente"
 carrera: "Docente DASS UCSE"
 gabinetes: ["Informática"]

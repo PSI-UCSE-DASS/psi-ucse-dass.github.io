@@ -1,5 +1,6 @@
 ---
 title: "Eduardo A. Graneros"
+apellido: "Graneros"
 rol: "docente"
 carrera: "UCSE-DASS"
 gabinetes: ["Informática"]

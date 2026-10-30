@@ -1,5 +1,6 @@
 ---
 title: "Maximiliano Sajama"
+apellido: "Sajama"
 rol: "estudiante"
 carrera: "Estudiante DASS UCSE"
 gabinetes: ["Informática"]

@@ -1,5 +1,6 @@
 ---
 title: "Gabriela Bejarano"
+apellido: "Bejarano"
 rol: "docente"
 carrera: "Docente DASS UCSE"
 gabinetes: ["Informática"]

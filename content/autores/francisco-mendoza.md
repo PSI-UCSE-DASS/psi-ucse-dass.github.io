@@ -1,5 +1,6 @@
 ---
 title: "Francisco Mendoza"
+apellido: "Mendoza"
 rol: "estudiante"
 carrera: "Estudiante DASS UCSE"
 gabinetes: ["Informática"]

@@ -1,5 +1,6 @@
 ---
 title: "Andrea Velázquez"
+apellido: "Velázquez"
 rol: "docente"
 carrera: "Docente DASS UCSE"
 gabinetes: ["Informática"]

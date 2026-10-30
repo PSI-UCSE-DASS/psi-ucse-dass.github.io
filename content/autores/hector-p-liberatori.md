@@ -1,5 +1,6 @@
 ---
 title: "Héctor P. Liberatori"
+apellido: "Liberatori"
 rol: "docente"
 carrera: "UCSE-DASS"
 gabinetes: ["Informática"]

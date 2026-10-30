@@ -1,5 +1,6 @@
 ---
 title: "Alberto Rodolfo Ramos"
+apellido: "Ramos"
 rol: "docente"
 carrera: "DASS UCSE"
 gabinetes: ["Informática"]

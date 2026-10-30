@@ -1,5 +1,6 @@
 ---
 title: "Fabio Argañaraz"
+apellido: "Argañaraz"
 rol: "docente"
 carrera: "Docente DASS UCSE – UNJu"
 gabinetes: ["Informática"]

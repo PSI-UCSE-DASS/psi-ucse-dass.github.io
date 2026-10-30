@@ -2,10 +2,20 @@
 <section class="cabecera"><div class="contenedor"><h1>{{ .Title }}</h1>{{ with .Content }}<div class="cabecera__txt">{{ . }}</div>{{ end }}</div></section>
 <section class="contenedor seccion">
   <ul class="lista-autores">
-    {{ range .Pages.ByTitle }}
-    {{ $slug := .File.ContentBaseName }}
-    {{ $n := 0 }}{{ range site.RegularPages }}{{ if in .Params.autores $slug }}{{ $n = add $n 1 }}{{ end }}{{ end }}
-    <li><a href="{{ .RelPermalink }}"><span class="autor__inicial autor__inicial--chica" aria-hidden="true">{{ substr .Title 0 1 }}</span><span><strong>{{ .Title }}</strong><small>{{ .Params.rol | humanize }} · {{ $n }} {{ cond (eq $n 1) "trabajo" "trabajos" }}</small></span></a></li>
+    {{/* Orden alfabético por apellido, sin distinguir mayúsculas ni tildes (la ñ va después de la n) */}}
+    {{ $items := slice }}
+    {{ range .Pages }}
+      {{ $ap := .Params.apellido | default .Title }}
+      {{ $k := lower $ap | replaceRE "[áàä]" "a" | replaceRE "[éèë]" "e" | replaceRE "[íìï]" "i" | replaceRE "[óòö]" "o" | replaceRE "[úùü]" "u" | replaceRE "ñ" "n{" }}
+      {{ $items = $items | append (dict "k" (printf "%s %s" $k (lower .Title)) "p" .) }}
+    {{ end }}
+    {{ range sort $items "k" }}
+    {{ $pg := .p }}
+    {{ $ap := $pg.Params.apellido | default $pg.Title }}
+    {{ $nom := $pg.Title | strings.TrimSuffix $ap | strings.TrimSpace }}
+    {{ $slug := $pg.File.ContentBaseName }}
+    {{ $n := 0 }}{{ range site.RegularPages }}{{ if or (in .Params.autores $slug) (in .Params.directores $slug) (in .Params.asesores $slug) }}{{ $n = add $n 1 }}{{ end }}{{ end }}
+    <li><a href="{{ $pg.RelPermalink }}"><span class="autor__inicial autor__inicial--chica" aria-hidden="true">{{ substr $ap 0 1 }}</span><span><strong>{{ if $nom }}{{ $ap }}, {{ $nom }}{{ else }}{{ $pg.Title }}{{ end }}</strong><small>{{ $pg.Params.rol | humanize }} · {{ $n }} {{ cond (eq $n 1) "trabajo" "trabajos" }}</small></span></a></li>
     {{ end }}
   </ul>
 </section>

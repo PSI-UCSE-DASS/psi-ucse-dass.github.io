@@ -1,5 +1,6 @@
 ---
 title: "Gino Ángelo Grosso"
+apellido: "Grosso"
 rol: "estudiante"
 carrera: "Estudiante DASS UCSE"
 gabinetes: ["Informática"]

@@ -1,5 +1,6 @@
 ---
 title: "Claudia A. Panica"
+apellido: "Panica"
 rol: "docente"
 carrera: "DASS UCSE"
 gabinetes: ["Informática"]

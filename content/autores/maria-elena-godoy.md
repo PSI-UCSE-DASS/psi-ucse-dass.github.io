@@ -1,5 +1,6 @@
 ---
 title: "María Elena Godoy"
+apellido: "Godoy"
 rol: "docente"
 carrera: "DASS UCSE"
 gabinetes: ["Informática"]

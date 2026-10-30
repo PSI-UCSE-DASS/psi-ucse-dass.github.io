@@ -1,5 +1,6 @@
 ---
 title: "Martín Vercellone"
+apellido: "Vercellone"
 rol: "docente"
 carrera: "DASS UCSE"
 gabinetes: ["Informática"]

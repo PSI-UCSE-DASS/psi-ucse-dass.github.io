@@ -1,5 +1,6 @@
 ---
 title: "Lucas Santiago Pérez"
+apellido: "Pérez"
 rol: "estudiante"
 carrera: "Estudiante DASS UCSE"
 gabinetes: ["Informática"]

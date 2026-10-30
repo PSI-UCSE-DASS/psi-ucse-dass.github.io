@@ -1,5 +1,6 @@
 ---
 title: "Mariano Reynaga Ducos"
+apellido: "Reynaga Ducos"
 rol: "estudiante"
 carrera: "Estudiante DASS UCSE"
 gabinetes: ["Informática"]

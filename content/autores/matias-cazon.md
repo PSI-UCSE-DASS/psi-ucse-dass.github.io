@@ -1,5 +1,6 @@
 ---
 title: "Matías Cazón"
+apellido: "Cazón"
 rol: "estudiante"
 carrera: "Estudiante DASS UCSE"
 gabinetes: ["Informática"]

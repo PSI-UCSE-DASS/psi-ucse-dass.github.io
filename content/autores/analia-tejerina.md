@@ -1,5 +1,6 @@
 ---
 title: "Analía Tejerina"
+apellido: "Tejerina"
 rol: "docente"
 carrera: "DASS UCSE"
 gabinetes: ["Informática"]

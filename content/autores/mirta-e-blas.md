@@ -1,5 +1,6 @@
 ---
 title: "Mirta E. Blas"
+apellido: "Blas"
 rol: "docente"
 carrera: "UCSE-DASS"
 gabinetes: ["Informática"]

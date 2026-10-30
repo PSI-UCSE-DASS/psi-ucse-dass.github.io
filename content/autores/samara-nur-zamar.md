@@ -1,5 +1,6 @@
 ---
 title: "Samara Nur Zamar"
+apellido: "Zamar"
 rol: "estudiante"
 carrera: "Estudiante DASS UCSE"
 gabinetes: ["Informática"]

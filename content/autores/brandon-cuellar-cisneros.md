@@ -1,5 +1,6 @@
 ---
 title: "Brandon Cuellar Cisneros"
+apellido: "Cuellar Cisneros"
 rol: "estudiante"
 carrera: "Estudiante DASS UCSE"
 gabinetes: ["Informática"]

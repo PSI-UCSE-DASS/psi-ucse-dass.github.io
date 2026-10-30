@@ -1,5 +1,6 @@
 ---
 title: "Marco Castillo"
+apellido: "Castillo"
 rol: "estudiante"
 carrera: "Estudiante DASS UCSE"
 gabinetes: ["Informática"]
