@@ -3,7 +3,7 @@ title: "Caracterización del sistema productivo de los Valles Templados de Jujuy
 slug: "caracterizacion-sistema-productivo-valles-templados"
 weight: 2
 date: 2026-10-30
-eventos: ["Simposio de Investigación 2026"]
+eventos: ["VIII Simposio de Investigación"]
 gabinetes: ["Informática"]
 autores: ["claudia-a-panica", "maria-elena-godoy", "liliana-n-gonzalez", "laura-a-garay", "fabio-arganaraz", "gisela-n-revollo-sarmiento"]
 palabras-clave: ["Agricultura 4.0", "Agricultura de precisión", "Sistema productivo", "Transformación digital", "Jujuy"]

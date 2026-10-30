@@ -4,7 +4,7 @@ subtitulo: "Ejercicios, trabajos prácticos y exámenes generados por agentes ba
 slug: "agentes-ia-mcp"
 weight: 2
 date: 2026-10-29
-eventos: ["Simposio de Investigación 2026"]
+eventos: ["VIII Simposio de Investigación"]
 gabinetes: ["Informática"]
 autores: ["fabio-arganaraz", "samara-nur-zamar", "mariano-sumbaino", "gino-angelo-grosso"]
 asesores: ["gabriela-bejarano"]

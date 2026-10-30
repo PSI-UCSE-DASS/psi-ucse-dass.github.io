@@ -3,7 +3,7 @@
   <div class="contenedor hero__in">
     <p class="hero__pre">Prosecretaría de Investigación · UCSE Jujuy</p>
     <h1 class="hero__titulo">{{ site.Title }}</h1>
-    <p class="hero__sub">Posters digitales y ponencias del VIII Simposio de Investigación 2026.</p>
+    <p class="hero__sub">Posters digitales y ponencias del VIII Simposio de Investigación.</p>
     <form class="hero__buscar" action="{{ "buscar/" | relURL }}" role="search">
       <label class="sr" for="q">Buscar trabajos</label>
       <input id="q" name="q" type="search" placeholder="Buscar por título, autor o palabra clave">
@@ -25,7 +25,7 @@
   </div>
 </section>
 
-{{ with site.GetPage "/eventos/simposio-de-investigación-2026" }}
+{{ with site.GetPage "/eventos/viii-simposio-de-investigación" }}
 <section class="contenedor seccion">
   <div class="destacado-evento">
     <div>

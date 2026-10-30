@@ -4,7 +4,7 @@ subtitulo: "En proyectos de cátedras de las materias Sistemas de Información I
 slug: "evaluacion-competencias-elicitacion-llm-lel"
 weight: 1
 date: 2026-10-30
-eventos: ["Simposio de Investigación 2026"]
+eventos: ["VIII Simposio de Investigación"]
 gabinetes: ["Informática"]
 autores: ["eduardo-a-graneros", "hector-p-liberatori", "fabiana-j-chiquello", "mirta-e-blas", "zoe-lihue-pereyra", "samara-nur-zamar"]
 palabras-clave: ["Ingeniería de Requerimientos", "LEL", "LLM", "Experimento pedagógico"]

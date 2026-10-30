@@ -4,7 +4,7 @@ subtitulo: "Estudio de viabilidad técnica en el contexto educativo de Jujuy"
 slug: "certificacion-digital-contratos-inteligentes"
 weight: 3
 date: 2026-10-29
-eventos: ["Simposio de Investigación 2026"]
+eventos: ["VIII Simposio de Investigación"]
 gabinetes: ["Informática"]
 autores: ["fernando-sanchez"]
 palabras-clave: ["contratos inteligentes", "certificación digital", "blockchain", "Solidity", "educación"]

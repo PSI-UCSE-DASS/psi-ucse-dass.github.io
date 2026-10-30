@@ -4,7 +4,7 @@ subtitulo: "Aprendizaje basado en proyectos con clientes reales: desarrollo de e
 slug: "tecno-x"
 weight: 6
 date: 2026-10-29
-eventos: ["Simposio de Investigación 2026"]
+eventos: ["VIII Simposio de Investigación"]
 gabinetes: ["Informática"]
 autores: ["martin-sadir", "francisco-matos", "matias-campos"]
 directores: ["fabio-arganaraz", "fernando-sanchez", "jorge-zoto"]

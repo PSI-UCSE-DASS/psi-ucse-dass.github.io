@@ -4,7 +4,7 @@ subtitulo: "Del prototipo al proyecto: formulación de investigaciones aplicadas
 slug: "mentoria-dass"
 weight: 7
 date: 2026-10-29
-eventos: ["Simposio de Investigación 2026"]
+eventos: ["VIII Simposio de Investigación"]
 gabinetes: ["Informática"]
 autores: ["gino-angelo-grosso", "zoe-lihue-pereyra"]
 palabras-clave: ["Mentoría DASS", "tutorías entre pares", "trabajo final de grado", "investigación tecnológica"]

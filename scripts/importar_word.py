@@ -21,7 +21,7 @@ from docx import Document
 
 RAIZ = pathlib.Path(__file__).resolve().parent.parent
 ANIO = 2026
-EVENTO = "Simposio de Investigación 2026"
+EVENTO = "VIII Simposio de Investigación"
 GABINETE = "Informática"
 
 CLAVES = {

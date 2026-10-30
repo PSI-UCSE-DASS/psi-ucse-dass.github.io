@@ -4,7 +4,7 @@ subtitulo: "Cómo medir, con datos de Tándem, qué hace que un docente acepte d
 slug: "aplicada"
 weight: 8
 date: 2026-10-29
-eventos: ["Simposio de Investigación 2026"]
+eventos: ["VIII Simposio de Investigación"]
 gabinetes: ["Informática"]
 autores: ["samara-nur-zamar", "cristian-alexis-bautista-torrez"]
 palabras-clave: ["Tándem", "tutorías entre pares", "trabajo final de grado", "investigación aplicada"]

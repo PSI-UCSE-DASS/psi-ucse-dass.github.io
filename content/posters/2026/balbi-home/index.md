@@ -4,7 +4,7 @@ subtitulo: "Aprendizaje basado en proyectos con clientes reales: desarrollo de e
 slug: "balbi-home"
 weight: 4
 date: 2026-10-29
-eventos: ["Simposio de Investigación 2026"]
+eventos: ["VIII Simposio de Investigación"]
 gabinetes: ["Informática"]
 autores: ["elina-luisana-copa", "lucas-santiago-perez", "melani-agustina-valdez"]
 directores: ["fabio-arganaraz", "fernando-sanchez", "jorge-zoto"]

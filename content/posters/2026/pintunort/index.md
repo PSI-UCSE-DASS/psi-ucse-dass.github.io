@@ -4,7 +4,7 @@ subtitulo: "Aprendizaje basado en proyectos con clientes reales: desarrollo de e
 slug: "pintunort"
 weight: 5
 date: 2026-10-29
-eventos: ["Simposio de Investigación 2026"]
+eventos: ["VIII Simposio de Investigación"]
 gabinetes: ["Informática"]
 autores: ["francisco-mendoza", "marco-castillo", "maximiliano-sajama"]
 directores: ["fernando-sanchez", "fabio-arganaraz", "jorge-zoto"]

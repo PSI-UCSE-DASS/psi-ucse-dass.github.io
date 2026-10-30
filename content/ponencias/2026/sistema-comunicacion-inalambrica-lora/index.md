@@ -3,7 +3,7 @@ title: "Implementación de un sistema de comunicación inalámbrica usando módu
 slug: "sistema-comunicacion-inalambrica-lora"
 weight: 4
 date: 2026-10-30
-eventos: ["Simposio de Investigación 2026"]
+eventos: ["VIII Simposio de Investigación"]
 gabinetes: ["Informática"]
 autores: ["alberto-rodolfo-ramos", "analia-tejerina", "martin-vercellone", "mariano-reynaga-ducos", "francisco-matos", "brandon-cuellar-cisneros", "luciana-mariel-zapana"]
 mesa: "Mesa de trabajo: Investigación en informática y tecnología para la sociedad del conocimiento"
