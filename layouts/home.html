@@ -18,13 +18,13 @@
 {{ $autoras := slice }}
 {{ range $posters | append $ponencias }}{{ range .Params.autores }}{{ $autoras = $autoras | append . }}{{ end }}{{ end }}
 {{ $autoras = $autoras | uniq }}
-{{ $est := 0 }}{{ $doc := 0 }}
-{{ range $autoras }}{{ with site.GetPage (printf "/autores/%s" .) }}{{ if eq .Params.rol "estudiante" }}{{ $est = add $est 1 }}{{ else }}{{ $doc = add $doc 1 }}{{ end }}{{ end }}{{ end }}
+{{ $est := 0 }}{{ $doc := 0 }}{{ $ext := 0 }}
+{{ range $autoras }}{{ with site.GetPage (printf "/autores/%s" .) }}{{ if eq .Params.rol "estudiante" }}{{ $est = add $est 1 }}{{ else if eq .Params.rol "investigadora" }}{{ $ext = add $ext 1 }}{{ else }}{{ $doc = add $doc 1 }}{{ end }}{{ end }}{{ end }}
 <section class="contenedor seccion">
   <div class="cifras">
     <div><strong>{{ len $posters }}</strong><span>posters</span></div>
     <div><strong>{{ len $ponencias }}</strong><span>ponencias</span></div>
-    <div><strong>{{ len $autoras }}</strong><span>autores</span><small>{{ $doc }} docentes e investigadores · {{ $est }} estudiantes</small></div>
+    <div><strong>{{ len $autoras }}</strong><span>autores</span><small>{{ $doc }} docentes · {{ $est }} estudiantes{{ if $ext }} · {{ $ext }} {{ cond (eq $ext 1) "investigadora externa" "investigadores externos" }}{{ end }}</small></div>
   </div>
 </section>
 
