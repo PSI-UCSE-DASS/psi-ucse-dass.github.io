@@ -247,9 +247,13 @@ dialog.zoom::backdrop { background: rgba(5, 15, 35, .9); }
 .pie__logo { background: #fff; padding: 10px; border-radius: 4px; width: 150px; height: auto; margin-bottom: 12px; }
 
 .trabajo__sub { margin: 6px 0 0; color: var(--texto-suave); max-width: 80ch; }
-.interactivo { margin-top: 16px; border: 1px solid var(--borde); padding: 12px 16px; background: var(--superficie); }
-.interactivo summary { cursor: pointer; font-weight: 700; }
-.visor__html--ancho { aspect-ratio: 16 / 9; margin-top: 12px; }
+.interactivo { margin: 0; }
+.visor__previa { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; background: #fff; }
+.visor__html[data-cargando] iframe { opacity: 0; transition: opacity .25s; }
+.visor__html[data-cargando].listo iframe { opacity: 1; }
+.interactivo__nota { display: none; font-size: .85rem; color: var(--texto-suave); margin: 8px 0 0; }
+@media (max-width: 700px) { .interactivo__nota { display: block; } }
+.visor__html--ancho { aspect-ratio: 16 / 9; }
 
 .tarjeta__ph { text-decoration: none; letter-spacing: .12em; background: linear-gradient(135deg, var(--superficie), var(--borde)); }
 .trabajo__visor .resumen { margin-top: 0; }
@@ -266,7 +270,7 @@ dialog.zoom::backdrop { background: rgba(5, 15, 35, .9); }
 .responsable { margin: 0 0 20px; color: var(--texto-suave); font-size: .92rem; }
 .chip-video--solo { position: static; display: inline-block; margin: 12px 0 0 16px; }
 
-.interactivo__acciones { margin: 12px 0 0; }
+.interactivo__acciones { margin: 12px 0 0; display: flex; flex-wrap: wrap; gap: 10px; }
 dialog.zoom--html { height: 100vh; height: 100dvh; overflow: hidden; }
 dialog.zoom--html iframe { width: 100%; height: 100%; border: 0; background: #fff; display: block; }
 .zoom__nota { display: none; position: fixed; left: 0; right: 0; bottom: 16px; margin: 0; text-align: center; color: #fff; font-size: .9rem; pointer-events: none; }

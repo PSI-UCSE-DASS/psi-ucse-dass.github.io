@@ -151,5 +151,11 @@ document.getElementById('ico6').addEventListener('click',function(e){var b=e.tar
   Array.prototype.forEach.call(this.children,function(x){x.className=x==b?'on':''});
   document.getElementById('sd').innerHTML='<h4>'+S[i].n+'</h4><p>'+S[i].d+'</p>';});
 </script>
+<script>
+/* Reajusta la escala cuando el visor ya tiene su tamaño final (evita póster vacío o en escala 0 al cargar). */
+(function(){function r(){window.dispatchEvent(new Event('resize'));}
+window.addEventListener('load',r);setTimeout(r,150);setTimeout(r,600);
+if(window.ResizeObserver){new ResizeObserver(r).observe(document.documentElement);}})();
+</script>
 </body>
 </html>

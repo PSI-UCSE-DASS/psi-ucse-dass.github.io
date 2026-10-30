@@ -25,7 +25,7 @@
   <div class="trabajo__grid">
     <div class="trabajo__visor">
       {{ if eq $tipo "ninguno" }}{{ partial "resumen.html" . }}{{ end }}
-      {{ if and $archivo (eq $tipo "imagen") }}
+      {{ if and $archivo (eq $tipo "imagen") (not .Params.poster_html) }}
         {{ $med := $archivo.Resize "1600x webp" }}
         <figure class="visor">
           <a class="visor__link" href="{{ $archivo.RelPermalink }}" data-zoom aria-label="Ver poster en pantalla completa">
@@ -45,13 +45,18 @@
         <p><a class="btn btn--sec" href="{{ $src }}" target="_blank" rel="noopener">Abrir el poster interactivo en otra pestaña</a></p>
       {{ end }}
       {{ with .Params.poster_html }}
-        <details class="interactivo">
-          <summary>Ver la versión interactiva del poster</summary>
-          <p class="interactivo__acciones"><button class="btn btn--sec" type="button" data-ampliar-html="{{ . | relURL }}">Ampliar a pantalla completa</button></p>
-          <div class="visor__html visor__html--ancho">
-            <iframe src="{{ . | relURL }}" title="Versión interactiva: {{ $.Title }}" sandbox="allow-scripts" loading="lazy"></iframe>
+        {{ $med := false }}{{ with $archivo }}{{ $med = .Resize "1600x webp" }}{{ end }}
+        <div class="interactivo">
+          <div class="visor__html visor__html--ancho" data-cargando>
+            {{ with $med }}<img class="visor__previa" src="{{ .RelPermalink }}" width="{{ .Width }}" height="{{ .Height }}" alt="{{ $.Params.poster_alt | default (printf "Poster: %s" $.Title) }}">{{ end }}
+            <iframe src="{{ . | relURL }}" title="Poster interactivo: {{ $.Title }}" sandbox="allow-scripts"></iframe>
           </div>
-        </details>
+          <p class="interactivo__acciones">
+            <button class="btn" type="button" data-ampliar-html="{{ . | relURL }}">Ampliar a pantalla completa</button>
+            {{ with $archivo }}<a class="btn btn--sec" href="{{ .RelPermalink }}" data-zoom data-alt="{{ $.Params.poster_alt | default (printf "Poster: %s" $.Title) }}">Ver imagen del poster</a>{{ end }}
+          </p>
+          <p class="interactivo__nota">En el celular, usá «Ampliar a pantalla completa» y girá el teléfono para leerlo mejor.</p>
+        </div>
       {{ end }}
       {{ range .Params.fotos }}
         {{ with $.Resources.GetMatch .archivo }}{{ $f := .Resize "1200x webp" }}

@@ -40,7 +40,7 @@
     link.addEventListener('click', function (e) {
       e.preventDefault();
       img.src = link.href;
-      img.alt = link.querySelector('img').alt;
+      var li = link.querySelector('img'); img.alt = li ? li.alt : (link.dataset.alt || '');
       lienzo.classList.remove('ampliado');
       dlg.showModal();
     });
@@ -49,14 +49,34 @@
     dlg.addEventListener('click', function (e) { if (e.target === dlg) dlg.close(); });
   }
 
-  // Versión interactiva en pantalla completa
+  // Versión interactiva: la previa (imagen) se ve hasta que el iframe termina de cargar
+  document.querySelectorAll('.visor__html[data-cargando]').forEach(function (v) {
+    var f = v.querySelector('iframe');
+    if (!f) return;
+    function listo() { v.classList.add('listo'); }
+    f.addEventListener('load', listo);
+    setTimeout(listo, 6000);
+  });
+
+  // Versión interactiva en pantalla completa: se abre el diálogo y recién después (con tamaño ya calculado) se carga el iframe;
+  // si no carga a tiempo se reintenta una vez
   var dh = document.querySelector('dialog.zoom--html');
   var bh = document.querySelector('[data-ampliar-html]');
   if (dh && bh && dh.showModal) {
     var fr = dh.querySelector('iframe');
-    bh.addEventListener('click', function () { fr.src = bh.dataset.ampliarHtml; dh.showModal(); });
+    var temporizador;
+    function cargar(intento) {
+      var cargado = false;
+      fr.onload = function () { cargado = true; clearTimeout(temporizador); };
+      fr.src = bh.dataset.ampliarHtml + (intento ? '?r=' + intento : '');
+      temporizador = setTimeout(function () { if (!cargado && dh.open && intento < 2) cargar(intento + 1); }, 4000);
+    }
+    bh.addEventListener('click', function () {
+      dh.showModal();
+      requestAnimationFrame(function () { requestAnimationFrame(function () { cargar(0); }); });
+    });
     dh.querySelector('.zoom__cerrar').addEventListener('click', function () { dh.close(); });
-    dh.addEventListener('close', function () { fr.removeAttribute('src'); });
+    dh.addEventListener('close', function () { clearTimeout(temporizador); fr.onload = null; fr.removeAttribute('src'); });
   }
 
   // Compartir y copiar
