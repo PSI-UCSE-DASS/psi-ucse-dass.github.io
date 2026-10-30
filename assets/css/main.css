@@ -300,4 +300,4 @@ dialog.galeria-visor[open] { display: grid; grid-template-columns: 56px 1fr 56px
   .galeria-visor__nav { width: 34px; height: 34px; font-size: 1.5rem; margin: 0 1px; }
 }
 /* La descripción de la foto ampliada queda solo para lectores de pantalla */
-.galeria-visor figcaption [data-pie] { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+.galeria-visor figcaption 

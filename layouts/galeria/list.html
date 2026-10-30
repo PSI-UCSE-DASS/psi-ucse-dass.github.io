@@ -15,8 +15,8 @@
         {{ $mini := .Resize "560x webp q75" }}
         {{ $gran := .Resize "1600x webp q82" }}
         <li>
-          <button type="button" class="galeria__foto" data-grande="{{ $gran.RelPermalink }}" data-alt="{{ $f.alt }}" aria-label="Ampliar foto {{ add $i 1 }} de {{ len $fotos }}: {{ $f.alt }}">
-            <img src="{{ $mini.RelPermalink }}" width="{{ $mini.Width }}" height="{{ $mini.Height }}" alt="{{ $f.alt }}" loading="lazy" decoding="async">
+          <button type="button" class="galeria__foto" data-grande="{{ $gran.RelPermalink }}" aria-label="Ampliar foto {{ add $i 1 }} de {{ len $fotos }}">
+            <img src="{{ $mini.RelPermalink }}" width="{{ $mini.Width }}" height="{{ $mini.Height }}" alt="" loading="lazy" decoding="async">
           </button>
         </li>
       {{ end }}
@@ -28,7 +28,7 @@
   <button class="galeria-visor__nav galeria-visor__nav--prev" type="button" aria-label="Foto anterior">‹</button>
   <figure>
     <img alt="">
-    <figcaption><span data-pie></span> <small data-cuenta></small></figcaption>
+    <figcaption><small data-cuenta></small></figcaption>
   </figure>
   <button class="galeria-visor__nav galeria-visor__nav--sig" type="button" aria-label="Foto siguiente">›</button>
 </dialog>
