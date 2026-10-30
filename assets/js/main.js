@@ -90,8 +90,6 @@
       actual = (i + botones.length) % botones.length;
       var b = botones[actual];
       gimg.src = b.dataset.grande;
-      gimg.alt = b.dataset.alt;
-      gv.querySelector('[data-pie]').textContent = b.dataset.alt;
       gv.querySelector('[data-cuenta]').textContent = (actual + 1) + ' / ' + botones.length;
     };
     botones.forEach(function (b, i) { b.addEventListener('click', function () { mostrar(i); gv.showModal(); }); });
