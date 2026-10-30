@@ -20,5 +20,6 @@ fotos:
   - archivo: "foto-16.jpeg"
   - archivo: "foto-17.jpeg"
   - archivo: "foto-18.jpeg"
+  - archivo: "foto-19.jpeg"
 ---
 Momentos de la jornada de presentación de posters y ponencias.
