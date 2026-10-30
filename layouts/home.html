@@ -17,11 +17,14 @@
 {{/* Personas únicas que figuran como autoras (sin contar directores/asesores ni repetidos) */}}
 {{ $autoras := slice }}
 {{ range $posters | append $ponencias }}{{ range .Params.autores }}{{ $autoras = $autoras | append . }}{{ end }}{{ end }}
+{{ $autoras = $autoras | uniq }}
+{{ $est := 0 }}{{ $doc := 0 }}
+{{ range $autoras }}{{ with site.GetPage (printf "/autores/%s" .) }}{{ if eq .Params.rol "estudiante" }}{{ $est = add $est 1 }}{{ else }}{{ $doc = add $doc 1 }}{{ end }}{{ end }}{{ end }}
 <section class="contenedor seccion">
   <div class="cifras">
     <div><strong>{{ len $posters }}</strong><span>posters</span></div>
     <div><strong>{{ len $ponencias }}</strong><span>ponencias</span></div>
-    <div><strong>{{ len ($autoras | uniq) }}</strong><span>autores</span></div>
+    <div><strong>{{ len $autoras }}</strong><span>autores</span><small>{{ $doc }} docentes e investigadores · {{ $est }} estudiantes</small></div>
   </div>
 </section>
 

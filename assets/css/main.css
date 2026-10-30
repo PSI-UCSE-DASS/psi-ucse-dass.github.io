@@ -277,3 +277,4 @@ dialog.zoom--html iframe { width: 100%; height: 100%; border: 0; background: #ff
 @media (max-width: 700px) and (orientation: portrait) { .zoom__nota { display: block; } }
 
 .enlaces-proyecto { display: flex; flex-wrap: wrap; gap: 10px; margin: 14px 0 0; }
+.cifras small { display: block; margin-top: 6px; color: var(--texto-suave); font-size: .85rem; }
