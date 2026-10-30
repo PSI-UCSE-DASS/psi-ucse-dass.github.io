@@ -58,6 +58,18 @@
           <p class="interactivo__nota">En el celular, usá «Ampliar a pantalla completa» y girá el teléfono para leerlo mejor.</p>
         </div>
       {{ end }}
+      {{ with .Params.enlaces_proyecto }}
+        <p class="enlaces-proyecto" data-pagefind-ignore>
+          {{ range . }}
+            {{ $u := urls.Parse . }}
+            {{ if in (slice "github.com" "www.github.com") $u.Host }}
+              <a class="btn btn--sec" href="{{ . }}" target="_blank" rel="noopener noreferrer" aria-label="Ver repositorio del proyecto (se abre en una pestaña nueva)">Ver repositorio</a>
+            {{ else }}
+              <a class="btn btn--sec" href="{{ . }}" target="_blank" rel="noopener noreferrer" aria-label="Abrir demo o sitio del proyecto (se abre en una pestaña nueva)">Abrir demo / sitio del proyecto</a>
+            {{ end }}
+          {{ end }}
+        </p>
+      {{ end }}
       {{ range .Params.fotos }}
         {{ with $.Resources.GetMatch .archivo }}{{ $f := .Resize "1200x webp" }}
         <figure class="foto"><img src="{{ $f.RelPermalink }}" width="{{ $f.Width }}" height="{{ $f.Height }}" alt="{{ $.Params.alt }}" loading="lazy"></figure>

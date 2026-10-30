@@ -43,6 +43,11 @@ def main():
                 errores.append(f"{nombre}: el consentimiento debe ser true")
             if carpeta == "posters" and not fm.get("poster_alt"):
                 errores.append(f"{nombre}: falta «poster_alt» (texto alternativo del poster)")
+            for url in re.findall(r'"([^"]*)"', fm.get("enlaces_proyecto", "")):
+                if not re.match(r"^https?://[^\s]+$", url):
+                    errores.append(f"{nombre}: «enlaces_proyecto» solo admite http/https: {url}")
+            if fm.get("enlaces_proyecto") and not fm["enlaces_proyecto"].startswith("["):
+                errores.append(f"{nombre}: «enlaces_proyecto» debe ser una lista entre corchetes")
             if "ejemplo" in md.parent.name:
                 avisos.append(f"{nombre}: es un contenido de EJEMPLO, borrarlo antes del evento")
     for a in avisos:

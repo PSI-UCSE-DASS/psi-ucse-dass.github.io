@@ -14,6 +14,7 @@ linea: "Proyecto Integrador · Programación II"
 poster: "poster.png"
 poster_tipo: "imagen"
 poster_alt: "Poster de PintuNort: problema de una pinturería de barrio que gestiona sus productos a mano, objetivos, arquitectura con React, API Express y MongoDB, recorrido del cliente en cinco pasos, estado de avance (prototipo funcional) y próximos pasos."
+enlaces_proyecto: ["https://github.com/UCSE-Programacion-2/proyecto-integrador-2026-virtual-divas"]
 resumen: "Una pinturería de barrio maneja muchos productos con marca, tipo, color, precio y stock, y mostrarlos y actualizarlos a mano consume tiempo y limita las ventas. El equipo construyó una tienda web con catálogo, búsqueda, carrito y compra simulada, y un panel de administración para productos, precios, stock y pedidos. Se basa en React con Vite, una API Express con JWT y MongoDB Atlas. El prototipo funciona de punta a punta; los próximos pasos son probarlo con el comercio real, sumar pagos reales, avisos de stock bajo y tests automáticos. Se usaron datos de prueba sintéticos."
 licencia: "CC BY-NC 4.0"
 consentimiento: true

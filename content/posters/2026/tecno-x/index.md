@@ -15,6 +15,7 @@ poster: "poster.png"
 poster_tipo: "imagen"
 poster_html: "posters-html/tecno-x.html"
 poster_alt: "Poster de Tecno X sobre fondo negro y amarillo: problema, objetivos, cómo funciona (tienda en React, API REST con Express y JWT, base de datos MongoDB), estado de avance, próximos pasos y una captura de la tienda en un celular."
+enlaces_proyecto: ["https://tecnox-tienda.vercel.app/"]
 resumen: "Tecno X vende celulares, parlantes y accesorios en su local y por redes sociales, pero no tenía una tienda propia para mostrar su catálogo y vender online. El equipo desarrolló una tienda web pensada para el celular, donde el cliente encuentra un producto, lo suma al carrito y compra, y donde el comercio carga, edita y da de baja productos sin escribir código. Usa React con Vite, una API REST con Express y JWT, y MongoDB Atlas, con cuatro sprints de Scrum. Ya funciona en producción; los próximos pasos son cobrar con Mercado Pago, descontar el stock al confirmar cada compra y probarla con clientes reales."
 licencia: "CC BY-NC 4.0"
 consentimiento: true
